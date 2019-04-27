@@ -1,0 +1,78 @@
+#exTab1 .tab-content {
+color : black;
+/*background-color: #428bca;*/
+padding : 5px 15px;
+}
+
+#exTab2 h3 {
+color : black;
+/*background-color: #428bca;*/
+padding : 5px 15px;
+}
+
+/* remove border radius for the tab */
+
+#exTab1 .nav-pills > li > a {
+border-radius: 0;
+}
+
+/* change border radius for the tab , apply corners on top*/
+
+#exTab3 .nav-pills > li > a {
+border-radius: 4px 4px 0 0 ;
+}
+
+#exTab3 .tab-content {
+color : black;
+/*background-color: #428bca;*/
+padding : 5px 15px;
+}
+
+
+.panel-heading {
+padding: 5px 15px;
+}
+
+.panel-footer {
+padding: 1px 15px;
+color: #A0A0A0;
+}
+
+.profile-img {
+width: 96px;
+height: 96px;
+margin: 0 auto 10px;
+display: block;
+-moz-border-radius: 50%;
+-webkit-border-radius: 50%;
+border-radius: 50%;
+}
+.filter-col{
+padding-left:10px;
+padding-right:10px;
+}
+offset-1 {
+margin-left: 1.333333%;
+}
+
+.btn {
+display: inline-block;
+padding: 6px 12px;
+margin-bottom: -60px;
+font-size: 14px;
+font-weight: 400;
+line-height: 1.42857143;
+text-align: center;
+white-space: nowrap;
+vertical-align: middle;
+-ms-touch-action: manipulation;
+touch-action: manipulation;
+cursor: pointer;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+background-image: none;
+border: 1px solid transparent;
+border-radius: 4px;
+}

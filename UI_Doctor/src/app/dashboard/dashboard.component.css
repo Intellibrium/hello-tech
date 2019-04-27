@@ -1,0 +1,117 @@
+  
+.offer{
+	background:#fff; border:1px solid #ddd;  margin: 15px 0; overflow:hidden;
+}
+
+
+.offer-radius{
+	border-radius:7px;
+}
+.offer-danger {	border-color: #d9534f; }
+.offer-danger .shape{
+	border-color: transparent #d9534f transparent transparent;
+}
+.offer-success {	border-color: #e2e7e9; }
+.offer-success .shape{
+
+}
+.offer-default {	border-color: #999999; }
+.offer-default .shape{
+	border-color: transparent #999999 transparent transparent;
+}
+.offer-primary {	border-color: #e2e7e9; }
+.offer-primary .shape{
+
+}
+.offer-info {	border-color: #e2e7e9; }
+.offer-info .shape{
+	border-color: transparent #e2e7e9 transparent transparent;
+}
+.offer-warning {	border-color: #f0ad4e; }
+.offer-warning .shape{
+	border-color: transparent #f0ad4e transparent transparent;
+}
+
+.shape-text{
+	color:#fff; font-size:12px; font-weight:bold; position:relative; right:-40px; top:2px; white-space: nowrap;
+	-ms-transform:rotate(30deg); /* IE 9 */
+	-o-transform: rotate(360deg);  /* Opera 10.5 */
+	-webkit-transform:rotate(30deg); /* Safari and Chrome */
+	transform:rotate(30deg);
+}	
+.offer-content{
+	
+}
+
+
+@media (min-width: 487px) {
+  .container {
+    max-width: 750px;
+  }
+ 
+}
+@media (min-width: 900px) {
+  .container {
+    max-width: 970px;
+  }
+  
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1170px;
+  }
+  
+  }
+  .panel-body {
+    padding: 220px;
+}
+.col-lg-6 {
+  width: 56%;
+  margin-left: -6%;
+}
+
+.panel-body {
+  padding: 220px;
+}
+
+.panel-body1 {
+  padding: 100px;
+}
+
+.table {
+  border: none;
+}
+
+.table-definition thead th:first-child {
+  pointer-events: none;
+  background: white;
+  border: none;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+
+
+
+
+
+nav.navbar-findcond { background: #D6EAF8; border-color: #ccc; box-shadow: 0 0 2px 0 #ccc; }
+nav.navbar-findcond a { color: black; }
+nav.navbar-findcond ul.navbar-nav a { color: black; border-style: solid; border-width: 0 0 2px 0; border-color: #fff; }
+nav.navbar-findcond ul.navbar-nav a:hover,
+nav.navbar-findcond ul.navbar-nav a:visited,
+nav.navbar-findcond ul.navbar-nav a:focus,
+nav.navbar-findcond ul.navbar-nav a:active { background: #fff; }
+nav.navbar-findcond ul.navbar-nav a:hover { border-color: #f14444; }
+nav.navbar-findcond li.divider { background: #ccc; }
+nav.navbar-findcond button.navbar-toggle { background: #D6EAF8; border-radius: 2px; }
+nav.navbar-findcond button.navbar-toggle:hover { background: #999; }
+nav.navbar-findcond button.navbar-toggle > span.icon-bar { background: #fff; }
+nav.navbar-findcond ul.dropdown-menu { border: 0; background: #fff; border-radius: 4px; margin: 4px 0; box-shadow: 0 0 4px 0 #ccc; }
+nav.navbar-findcond ul.dropdown-menu > li > a { color: #444; }
+nav.navbar-findcond ul.dropdown-menu > li > a:hover { background:#D6EAF8; color: #fff; }
+nav.navbar-findcond span.badge { background: #f14444; font-weight: normal; font-size: 11px; margin: 0 4px; }
+nav.navbar-findcond span.badge.new { background: rgba(255, 0, 0, 0.8); color: #fff; }

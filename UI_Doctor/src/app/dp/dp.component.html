@@ -1,0 +1,80 @@
+
+<div class="container-fluid">
+  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color:#D6EAF8;">
+      <div class="container-fluid">
+          <div class="navbar-header" >
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+  
+             
+              
+          </div>
+         <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                  
+                
+              </ul>
+  
+             
+      <h3 class="nav navbar-nav text-center" style="color:black; font-size:15px; background-color:#D6EAF8; margin-top:20px; text-size:5px;"><strong>Consultation</strong></h3>
+                            
+            
+              
+            
+              
+              
+  
+          </div>
+  
+      </div>
+  
+  </nav>
+  
+  
+  
+  
+  
+         
+           <div class="col-md-3 col-sm-3 col-lg-3  collapse side"  id="sidebar"  [ngClass]="{ 'in': isIn }"> 
+  
+              <div class="list-group panel ">
+                   
+                     
+                  <a [routerLink]=" ['/dp/home']" class="list-group-item collapsed active" data-parent="#sidebar"><i class="glyphicon glyphicon-plus" style="color:#4dde44;" aria-hidden="true"></i> <span class="hidden-sm-down"> Symptoms</span></a>
+                  <a [routerLink]=" ['/dp/do']" class="list-group-item collapsed" data-parent="#sidebar"><i class="glyphicon glyphicon-heart" style="color:#4dde44;" aria-hidden="true"></i> <span class="hidden-sm-down">Doctors Observation</span></a>
+                  <a [routerLink]=" ['/dp/co']" class="list-group-item collapsed" data-parent="#sidebar"><i class="glyphicon glyphicon-list" style="color:#4dde44;" aria-hidden="true"></i> <span class="hidden-sm-down">Clinical Investigation</span></a>
+                  <a [routerLink]=" ['/dp/diag']" class="list-group-item collapsed" data-parent="#sidebar"><i class="glyphicon glyphicon-list" style="color:#4dde44;" aria-hidden="true"></i> <span class="hidden-sm-down">Diagnosys</span></a>
+                  <a [routerLink]=" ['/dp/treat']" class="list-group-item collapsed" data-parent="#sidebar"><i class="glyphicon glyphicon-list"  style="color:#4dde44;"aria-hidden="true"></i> <span class="hidden-sm-down"> Treatment</span></a>
+                  <a [routerLink]=" ['/dp/pm']" class="list-group-item collapsed" data-parent="#sidebar"><i class="glyphicon glyphicon-tint" style="color:#4dde44;" aria-hidden="true"></i> <span class="hidden-sm-down">Preventive Measures</span></a>
+                  <a [routerLink]=" ['/dp/dtp']" class="list-group-item collapsed" data-parent="#sidebar"><i class="glyphicon glyphicon-picture" style="color:#4dde44;" aria-hidden="true"></i> <span class="hidden-sm-down">Doctor note to patient </span></a>
+                  <a [routerLink]=" ['/dp/dtm']" class="list-group-item collapsed" data-parent="#sidebar"><i class="glyphicon glyphicon-search" style="color:#4dde44;" aria-hidden="true"></i> <span class="hidden-sm-down">Doctor note to medicos</span></a>
+                  <a [routerLink]=" ['/dp/referrals']" class="list-group-item collapsed" data-parent="#sidebar"><i class="glyphicon glyphicon-search" style="color:#4dde44;" aria-hidden="true"></i> <span class="hidden-sm-down">FC Referrals</span></a>
+                  
+                  
+                  
+              </div>
+  
+           
+          
+      </div>
+  
+  
+  
+  
+           <div>
+  <router-outlet></router-outlet>
+  </div>
+  
+  </div>
+  
+   
+  
+   
+  
+  
+  
+  
