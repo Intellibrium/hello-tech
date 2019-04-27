@@ -1,0 +1,18 @@
+<div style="text-align: center; font-family:times new roman, Helvetica, sans-serif; font-size: 20px;">
+<hr/>  
+        <div> <h2>Please fill the Hospital details :</h2></div>
+            <hr />
+
+<div class="form-group"> 
+<form [formGroup]="hospitalDetails" (ngSubmit)="giveDetailsOfHospital(hospitalDetails.value)">
+                       Hospital Name: <input type="text" class="form-control" formControlName="hospitalName" style="width: 30%; margin-left: 35%;">
+                        Place: <input type="text" class="form-control" formControlName="docPlace" style="width: 20%; margin-left: 40%;">
+                       Date: <input type="date" class="form-control" formControlName="dateOfConsultation" style="width: 10%; margin-left: 45%;">
+                        Upload prescription:
+                        <input type="file" fileinput="file" formControlName="prescription" filepreview="filepreview"  style="width: 20%; margin-left: 40%;" />
+                        
+<br/>
+                        <button type="submit" class="btn btn-primay btn-info">Next</button>                   
+                    </form>
+</div>
+</div>

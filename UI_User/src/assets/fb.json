@@ -1,0 +1,22 @@
+[
+    {"name":"amar",
+     "password"  :123 ,
+     "pic":"/assets/rajesh.jpg"
+    },
+    {
+        "name":"rocky",
+        "password":111,
+        "pic":"/assets/photo1.JPG"
+        
+    },
+    {
+        "name":"deep",
+        "password":333,
+          "pic":"/assets/photo3.JPG"
+    },
+    {
+        "name":"pushkar",
+        "password":222,
+         "pic":"/assets/photo2.JPG"
+    }
+]

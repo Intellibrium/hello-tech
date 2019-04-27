@@ -1,0 +1,164 @@
+<style type="text/css">
+	#allservices{
+		margin-top: 150px;
+		cursor: pointer;
+		/*margin-right: 190px;*/
+	}
+
+	#allservices a{
+		color: #47b2d8;
+		text-decoration-line: none;
+	}
+	#allservices,a,img,span{
+		
+		text-align: center;
+	}
+
+	#allservices .text{
+		display: inline-block;
+		width: 120px;
+		height: 100px;
+		position: relative;
+		font-size: 12px;
+		/*box-shadow: 0px 0px 1px 1px #888888;*/
+		-webkit-transition:all .5s ease-in;
+		-webkit-transform:scale(1);
+		-ms-transition:all .5s ease-in;
+		-ms-transform:scale(1);
+		-moz-transition:all .5s ease-in;
+		-moz-transition:scale(1);
+		transition: all .5s ease-in;
+		transform: scale(1);
+	}
+
+	#allservices .text:hover{
+		cursor: pointer;
+		z-index: 1;
+		box-shadow: 0px 1px 5px #000000;
+		-webkit-transition:all .5s ease-out;
+		-webkit-transform:scale(1.2);
+		-ms-transition:all .5s ease-out;
+		-ms-transform:scale(1.2);
+		-moz-transition:all .5s ease-out;
+		-moz-transform:scale(1.2);
+		transition: all .5s ease-out;
+		transform:scale(1.2);
+	}
+
+	#allservices .col-md-3{
+		margin-bottom: 50px;
+		position: relative;
+	}
+
+	@media(max-width:500px){
+		/*#allservices{
+			margin-top: 150px;
+		}*/
+		#allservices .col-md-3{
+			width: 25%;
+
+		}
+		#allservices img a{
+			font-size: 6px;
+			width: 30px;
+			height: 30px;
+		}
+}
+</style>
+<div class="container" id="allservices">
+	<div class="row">
+
+		<div class="col-md-3" id="ser11">
+		<a [routerLink]="['../Digitalprescription']"><img src="assets/images/chat.png" width="50px" height="50px">
+		<h6>DP</h6></a>
+		<div class="text">
+			<span class="tooltext">Digital Prescription</span>
+		</div>
+	</div>
+	<div class="col-md-3" id="ser1">
+		<a [routerLink]="['../chat']"><img src="assets/images/chat.png" width="50px" height="50px">
+		<h6>Online Chat</h6></a>
+		<div class="text">
+			<span class="tooltext">Chat with qualified in house online doctor and get help free!!!</span>
+		</div>
+	</div>
+	<div class="col-md-3" id="ser2">
+		<a [routerLink]="['../aexp']"><img src="assets/images/expert.png" width="50px" height="50px">
+		<h6>Ask Expert</h6></a>
+		<div class="text">
+			<span class="tooltext">Be guided by the Experts for your medical needs</span>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<a [routerLink]="['../emer']"><img src="assets/images/emer.png" width="50px" height="50px">
+		<h6>Emergency</h6></a>
+		<div class="text">
+			<span class="tooltext">You need immediate medical attention & we are Here</span>
+		</div>
+	</div>
+	<div class="col-md-3" >
+		<a [routerLink]="['../base']"><img src="assets/images/know.png" width="50px" height="50px">
+		<h6>Knowledge Base</h6></a>
+		<div class="text">
+			<span class="tooltext">Enlighted your knowledge & how to manage a medical problem & find know medical solution</span>
+		</div>
+	</div>
+<!-- </div> -->
+<!-- </div> -->
+
+<!-- <div class="container" id="allservices"> -->
+	<!-- <div class="row"> -->
+	<div class="col-md-3">
+		<a [routerLink]="['../mt']"><img src="assets/images/plan.png" width="50px" height="50px">
+		<h6>Medical Planner</h6></a>
+		<div class="text">
+			<span class="tooltext">Plan your medical calendar</span>
+		</div>
+	</div>
+	<div class="col-md-3" >
+		<a [routerLink]="['../needhelp']"><img src="assets/images/p2p.png" width="50px" height="50px">
+		<h6>P2P</h6></a>
+		<div class="text">
+			<span class="tooltext">Lets help other and get help by others.</span>
+		</div>
+	</div>
+	<div class="col-md-3">
+		<a [routerLink]="['../serAtHome']"><img src="assets/images/service.png" width="50px" height="50px">
+		<h6>Service@Home</h6></a>
+		<div class="text">
+			<span class="tooltext">Medicose at your door step at one click</span>
+		</div>
+	</div>
+	<div class="col-md-3" >
+		<a [routerLink]="['/p/mtr']"><img src="assets/images/track.png" width="50px" height="50px">
+		<h6>Medical Track</h6></a>
+		<div class="text">
+			<span class="tooltext">Track your medical reports, get live updates on your prescriptions, clinical findings & medicines</span>
+		</div>
+	</div>
+</div>
+</div>
+
+<a [routerLink]="['../chat']"><b>1 Chat</b></a>
+
+<a [routerLink]="['../aexp']"><b>2 Ask EXpert</b></a>
+<a [routerLink]="['../takeOpinion']"><b>3 Take Opinion</b></a>
+<a [routerLink]="['../mt']"><b>4 Medical planner</b></a>
+
+<a [routerLink]="['../serAtHome']"><b>5 Service at home</b></a>
+<a [routerLink]="['../find']"><b>6 Find Appropriate</b></a>
+<a [routerLink]="['../needhelp']"><b>7 P2P</b></a>
+<a [routerLink]="['../emer']"><b>8 Emergency</b></a>
+<a [routerLink]="['../base']"><b>9 Knowledge-base</b></a>
+
+
+
+
+
+<b>
+    if the environment  punishes the mistake, you will never be tmpted go out of the box,
+you will remain safetly in the known environment.
+
+</b>
+chat: chat with qualified online doctors and get helped FREE!
+ae: 

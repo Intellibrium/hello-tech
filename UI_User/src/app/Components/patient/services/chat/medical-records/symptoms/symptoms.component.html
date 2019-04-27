@@ -1,0 +1,77 @@
+<div style=" font-family:times new roman, Helvetica, sans-serif; font-size: 20px;">
+<div>
+      <h2 style="text-align: center; ">Post your symptoms: </h2>
+      <hr />
+</div>
+
+<div class="form-group" *ngFor="let sympForm of  symptomsFormGroup;let i=index">
+<form [formGroup]="sympForm" (ngSubmit)="saveSymp(sympForm.value)">
+    <div class="col-xs-12">
+    <div class="row">
+   
+  <div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">
+        Symptoms<input  list="symptom1" type="text" [(ngModel)]="symptomsFormGroup[i].symptom"formControlName="symptom" class="form-control" placeholder="Symptom {{i+1}}" style="width:100%;background-color: white;color:black; ">
+        <datalist id="symptom1" class="list1">
+             <option>body pain</option>
+             <option>headache</option>
+             <option>fever</option>
+          </datalist>
+        </div>
+ <div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">
+    <div class="form-group">
+            From: <input id="date-birth" [(ngModel)]="symptomsFormGroup[i].from" formControlName="from" class="form-control" type="date" ng-model="dateBirth" style="width: 100%">     
+      </div>
+    </div>
+ <div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">
+            Till: <input id="date-birth" [(ngModel)]="symptomsFormGroup[i].till" formControlName="till" class="form-control" type="date" ng-model="dateBirth" style="width: 100%">  
+    </div>
+<div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">
+  Explain your problem in detail:<textarea type="text" class="form-control" [(ngModel)]="symptomsFormGroup[i].details" formControlName="details" name="name" ng-model="Addmore" placeholder="Eg. I’ve been having a headache and runny nose for 2 days" style="width: 100%;height: 5%"></textarea>
+  </div>
+
+   </div>
+   </div>
+  <div> 
+  <!-- <button type="save" class="btn btn-primary pull-left">Save</button> -->
+</div>
+</form>
+   </div>
+<div> 
+  <button type="submit" (click)="addSymptoms()"  class="btn btn-primary pull-left">add more symptoms</button>
+</div>
+<!-- <div> <button type="save" class="btn btn-primary pull-left" (click)="saveSymp()">Save</button></div> -->
+   <br><br>
+
+
+
+ 
+     
+
+      <div class="form-group row">
+ <hr/>
+    <div class="col-xs-5">
+    
+      <br><br>
+
+        <a (click)="saveSymp()"    class="btn   btn-block btn-info pull-left"  style="width: 80%" >
+       Processed to Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+        </a> 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span style="color: #ffffff; 
+    width: 100px;
+    height: 100px;
+    background: #47b2d8;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+">OR</span> 
+    </div>
+ 
+    <div class="col-xs-4">
+      <br><br>
+      <a (click)="chatDirectly()" class="btn btn-block btn-info " style="">
+      Chat Directly <span class="glyphicon glyphicon-circle-arrow-right"></span>
+      </a>
+    </div>
+  </div>
+</div>

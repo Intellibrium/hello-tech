@@ -1,0 +1,53 @@
+<div style="text-align: center; font-family:times new roman, Helvetica, sans-serif; font-size: 20px;">
+    <section class="color-pattern-4">
+         <p style="font-size: 25px;">   
+    Did you visit any doctor/clinic/hospital? For your medical symptoms:</p>
+    </section>
+<div>
+<input type="radio" [(ngModel)]="doctorConsult" name="doctor" value="yes">Yes
+<input type="radio" [(ngModel)]="doctorConsult" name="doctor" value="No">No
+<div [ngSwitch]="doctorConsult">
+
+    <div *ngSwitchCase="'yes'">
+  <hr/>     <div class=""  style="text-align: center; font-family:times new roman, Helvetica, sans-serif; font-size: 20px;">
+        <span class="Form-title" style="margin-top: 10%"><label>Tell Us What Kind of medical Care You Took</label></span>
+           
+            <div>
+            <div> &nbsp;<input type="radio" [(ngModel)]="doctorFrom"  name="doctor" value="doctor">Visited a Doctor</div>
+            <div> <input type="radio" [(ngModel)]="doctorFrom" name="doctor" value="clinic">Went to clinic</div>
+            <div> &nbsp; <input type="radio" [(ngModel)]="doctorFrom" name="doctor" value="hospital">Went to hospital </div>
+            
+            <div [ngSwitch]="doctorFrom">
+                <div *ngSwitchCase="'doctor'">
+                   <c-doctor-form [subject]="doc"></c-doctor-form> 
+                </div>
+                <div *ngSwitchCase="'clinic'">
+                    <c-clinic-form></c-clinic-form> 
+                </div>
+                <div *ngSwitchCase="'hospital'">
+                    <c-hospital-form></c-hospital-form>
+                </div>
+                
+
+            </div>
+        </div>
+        </div>
+    </div>
+    <div *ngSwitchCase="'No'">
+         <c-self-form></c-self-form>
+        
+</div>
+</div>
+      <div class="" >
+              <!-- <button class="button button-4 button-4a icon-arrow-right col-md-6 col-xs-6" style="margin-left: 25%" ><i class="fa fa-arrow-right"></i>Continue</button>   -->
+           
+        <button type="button" [routerLink]="['../../p/chatd']" class="btn btn-primary btn-info " style="margin-left:200px; position: fixed;top: 110px;">Chat Directly</button>
+        </div>   
+</div>
+
+            <div>
+              <router-outlet></router-outlet>
+
+          </div>
+            
+

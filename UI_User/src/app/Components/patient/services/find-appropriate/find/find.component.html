@@ -1,0 +1,154 @@
+<div style="background-color:white">
+  <div class="container-fluid" style="background-color: white; height:80px;margin-top: 60px;">
+    <div class="row">
+      <div class="col-md-12 col-md-offset-1 col-sm-12 col-sm-offset-1 col-lg-12 col-lg-offset-1 col-xs-12 col-xs-offset-1">
+        <div class="col-md-3 col-md-offset-1 col-sm-3 col-sm-offset-1 col-lg-3 col-lg-offset-1 col-xs-3 col-xs-offset-1" style="margin-top: 1.5%">
+<!--             <div class="col-sm-3 col-sm-offset-2 col-md-3 col-md-offset-2 col-xs-1 col-xs-offset-2 col-lg-3 col-lg-offset-2 pull-left">--> 
+          <select class="form-control" [(ngModel)]="selectedplace.pid" (change)="onselect($event.target.value)">
+            <option *ngFor="let p of places" value="{{p.pid}}">{{p.pname}}</option>
+          </select>
+          <!-- <input style="/*color: #7a7a7a*/" id="pac-input" class="form-control" type="text" placeholder="Enter City and Location" [(ngModel)]="searchResult" data-toggle="modal" data-target="#basicModal" > -->
+        </div>
+        <div class="col-md-3  col-sm-3  col-lg-3  col-xs-3 "  style="margin-top: 1.5%" >
+<!--             <div class="col-sm-3 col-sm-offset-2 col-md-3 col-md-offset-2 col-xs-1 col-xs-offset-2 col-lg-3 col-lg-offset-2 pull-left">--> 
+          <!-- <input id="pac-input" class="form-control" type="text" placeholder="Location" ng-model="newArea" data-toggle="" data-target="#"  style="color:#7a7a7a"> -->
+          <select class="form-control" [(ngModel)]="selectedplace.pid" (change)="onSelect($event.target.value)">
+            <!-- <option value="0"></option> -->
+            <option *ngIf='selectedplace.pid == 0' value="0">Location</option>
+            <option *ngFor="let a of areas" value="{{a.pid}}">{{a.aname}}</option>
+          </select>
+        </div>
+        <!-- <div class="col-md-3  col-sm-3  col-lg-3  col-xs-3 "  style="margin-top: 1.5%" >
+        <select class="form-control"> -->
+            <!-- <option value="0"></option> -->
+            <!-- <option *ngIf='selectedplace.pid == 0' value="0">doctor</option>
+            <option *ngFor="let d of doctors" value="{{d.did}}">{{d.dname}}</option>
+          </select>
+        </div> -->
+        <!-- <div class="col-md-2 col-md-offset-1 col-sm-3 col-sm-offset-1 col-lg-3 col-lg-offset-1 col-xs-3 col-xs-offset-1" style="margin-top: 1.5%;right: 100px;">
+          <div class="form-group has-feedback"> -->
+            <!-- <label class="control-label" for="inputSuccess2">Name</label> -->
+            <!-- <input type="text" class="form-control" id="inputSuccess2" placeholder="search..." />
+            <span class="glyphicon glyphicon-search form-control-feedback" (click)="next()"></span>
+          </div> -->
+          <!-- <div class="input-group custom-search-form" style="margin-left: -35%; ">
+            <input type="text" class="form-control" placeholder="Search Here"/>
+            <span class="input-group-btn ">
+              <button class="btn btn-primary col-sm-10 col-md-10 col-xs-10 col-lg-10" type="button" value="Search" (click)="searchFor()">search </button>
+            </span>
+          </div> -->
+        <!-- \</div> -->
+      </div>
+    </div>
+</div>
+<hr>
+
+
+<!-- <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Choose Your City and location
+          <button type="button" class="btn btn-info" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true" style="margin-left:40% ">&times;</button>
+        </h4>
+      </div>
+      <div class="modal-body" *ngFor="let p of places">
+        <img src="{{p.src}}" style="width: 20%; height: 6%">
+        <input type="radio" name="test" ng-model="rad" [(ngModel)]="searchResult"
+         value="{{p.pname}}" (change)="onselect($event.target.value)"> <br><br> -->
+
+        <!-- <img src="assets/images/hyd.jpg" style="width: 20%; height: 6%">
+        <input type="radio" name="test" ng-model="rad" value="Hydrabad" ><br><br>
+
+        <img src="assets/images/pune.jpg" style="width: 20%; height: 6%">
+        <input type="radio" name="test" ng-model="rad" value="Pune"><br><br>
+
+        <img src="assets/images/kochi.jpg" style="width: 20%; height: 6%">
+        <input type="radio" name="test" ng-model="rad" value="kochi"> -->
+      <!-- </div> -->
+     
+      <!-- <div class="modal-footer"> -->
+<!--         <center><input id="pac-input" class="form-control" type="text" placeholder="Enter Your Locality,Area"></center><br>
+ -->
+
+    <!-- <div id="searchBoxParent"></div> -->
+    <!-- <div id="map_canvas" ng-controller="mainCtrl">
+
+        <center><input type="text" gm-places-autocomplete ng-model="autocomplete" placeholder="Choose Location" ng-model="area" style="width: 300px;color: red"></center>
+
+</div> -->
+
+       <!--  <button type="submit" class="btn btn-info" ng-model="" data-dismiss="modal" ng-click="submit()">Submit</button>
+      </div> 
+    </div>
+  </div>
+</div> -->
+        
+
+
+<div class="container-fluid">
+  <div class="row" style="height:40%; margin-left: -2%; width: 70%">
+    <div class="col-md-4 col-sm-4 col-xs-4 col-lg-4">
+      <div class="panel panel-info">
+        <div class="panel-heading" style="background: #47b2d8;">
+          <h3 class="panel-title" style="color: white;">Home Menu List</h3>
+        </div>
+        <div class="panel-body">
+          <ul class="list-group" style="/*background-color:#8eb2ed;*/">
+            <h6 class="dropdown-submenu" style="border: 1px solid #47b2d8;"><a href="#" class="list-group-item"><img class="img-circle img-responsive img-center" src="../../images/doctor1.png" style="margin-right:5%;box-shadow: 0px 0px 2px 0px #47b2d8; " >Doctor</a>
+              <ul class="dropdown-menu">
+                <li><a tabindex="-1" ui-sref="p.searchResult">Sub Menu</a></li>
+                <li class="dropdown-submenu"><a href="#">Others</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Sub Menu</a></li>
+                    <li><a href="#">Sub Menu</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </h6>
+            <h6 class="dropdown-submenu" style="border: 1px solid #47b2d8;"><a tabindex="-1" href="#" class="list-group-item"> <img class="img-circle img-responsive img-center" src="../../images/care.png" style="margin-right:5%">Clinics</a></h6>
+            <h6 class="dropdown-submenu" style="border: 1px solid #47b2d8;"><a tabindex="-1" href="#" class="list-group-item"> <img class="img-circle img-responsive img-center" src="../../images/hospital.png" style="margin-right:5%">Hospitals</a></h6>
+            <h6 class="dropdown-submenu" style="border: 1px solid #47b2d8;"><a tabindex="-1" href="#" class="list-group-item"> <img class="img-circle img-responsive img-center" src="../../images/hospital.png" style="margin-right:5%">Super speciality hospitals</a></h6>
+            <h6 class="dropdown-submenu" style="border: 1px solid #47b2d8;"><a tabindex="-1" href="#" class="list-group-item"> <img class="img-circle img-responsive img-center" src="../../images/pills.png" style="margin-right:5%">Medicine</a></h6>
+            <h6 class="dropdown-submenu" style="border: 1px solid #47b2d8;"><a tabindex="-1" class="list-group-item" href="#"> <img class="img-circle img-responsive img-center" src="../../images/pills.png" style="margin-right:5%">Pharmacy</a>
+              <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="#"> Homeopathy</a></li>
+                <li class="dropdown-submenu"><a href="#">Others</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="#">Massage</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Ayurvedic</a></li>
+                <li><a href="#">Unani</a></li>
+              </ul>
+            </h6>
+            <h6><a href="#" class="list-group-item" style="border: 1px solid #47b2d8;"> <img class="img-circle img-responsive img-center" src="../../images/spinal.png" style="margin-right:5%"> Physiotherapy Centre</a></h6>
+            <h6><a href="#" class="list-group-item" style="border: 1px solid #47b2d8;"> <img class="img-circle img-responsive img-center" src="../../images/spinal.png" style="margin-right:5%">Fitness Club</a></h6>
+            <h6><a href="#" class="list-group-item" style="border: 1px solid #47b2d8;"> <img class="img-circle img-responsive img-center" src="../../images/spinal.png" style="margin-right:5%">Gym</a></h6>
+          </ul>
+        </div>
+      </div>1
+    </div>
+
+    <div class="col-md-8">
+      <!-- <h3 style="color: black;">Doctors</h3> -->
+      <div class="docts" *ngFor="let d of doctors" style="box-shadow: 0px 0px 5px #888888;">
+        <p>Doctor Name: {{d.dname}}</p>
+        <p>Department: {{d.ddep}}</p>
+        <p>Experience: {{d.dexp}}</p>
+      <!-- <input type="text" value="{{d.dname}}"> -->
+        <!-- <select class="form-control"> -->
+            <!-- <option value="0"></option> -->
+            <!-- <option *ngIf='selectedplace.pid == 0' value="0">doctor</option> -->
+           <!--  <option *ngFor="let d of doctors" value="{{d.did}}">{{d.dname}}</option>
+          </select> -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+</div>
+

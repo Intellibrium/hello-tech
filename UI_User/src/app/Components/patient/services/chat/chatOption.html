@@ -1,0 +1,29 @@
+ <div class="col-sm-11 col-md-offset-2" style="text-align: center; font-family:times new roman, Helvetica, sans-serif; font-size: 20px; margin-left: 5%; margin-top: 2%;">
+       <p >You can get in touch with our online doctors anytime. You can press ‘chat directly button’ & it will connect you for free. It will be better if you input certain fact about your health medical problems : </p>
+       <hr/>
+        <section class="color-pattern-11" style="margin-top: 5%; margin-left: 13%">
+        <div ng-show="chatForm">
+
+        <div class="col-md-5 col-md-offset-1" >
+        
+         <span style="color: #ffffff; 
+    width: 100px;
+    height: 100px;
+    background: #47b2d8;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+">OR</span>
+             <button type="button" class="btn btn-block btn-info pull-left" style="width: 53%;" (click)="giveDetails()">Tell something about your Health</button>
+        
+        </div>
+  
+          <div class="col-md-5" >
+            
+        <button type="button" [routerLink]="['../../p/chatd']" 
+        class="btn btn-block btn-info pull-left" style=" width: 53%;">Chat directly with online doctor</button>
+        </div>
+        </div>
+        
+        </section>
+</div>

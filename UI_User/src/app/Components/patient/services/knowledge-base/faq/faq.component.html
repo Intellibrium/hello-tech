@@ -1,0 +1,56 @@
+<div class="container">
+  <div class="row">
+<div class="col-md-12">
+
+   
+<!-- <marquee style="margin-top:30px; font-size:20px; font-family:normal;">you are into the page which contains all the details of your health querry!!!</marquee> -->
+<marquee style="margin-top:30px; font-size:20px; font-family:normal;"> you searched for the query :: {{head}}    
+</marquee><div class="container" id="features">
+  <div class="row">
+    <div class="col-md-3 col-sm-3 feature">
+          <img src="/assets/images/faq.png"/>
+            <h3>FAQ</h3>
+            <div class="title_border"></div>
+            <p>Frequently asked questions (FAQ)-Get informed about your query in the form of questions and answers. You might find the exact question that is in your mind and its corresponding answer</p>
+     <div class="btn btn-primary" (click)="readFaq()">Proceed</div>
+    </div>
+
+        <div class="col-md-3 col-sm-3 feature">
+            <img src="/assets/images/do.png"/>
+            <h3>Do's & Dont's</h3>
+            <div class="title_border"></div>
+            <p style="margin-top:28px;">What you should or what you should not when you are facing a medical problem or incase of emergency and critical situation</p>
+             <div class="btn btn-primary">Proceed</div>
+    </div>
+        <div class="col-md-3 col-sm-3 feature">
+           <img src="/assets/images/general.png"/>
+            <h3>Medical Journal</h3>
+            <div class="title_border"></div>
+            <p>A medical journal is a peer-reviewed scientific journal which communicates medical information to physicians and other health professionals.people can see the details here</p>
+    
+ <div class="btn btn-primary">Proceed</div>
+    </div>
+
+     <div class="col-md-3 col-sm-3 feature">
+             <img src="/assets/images/play.png"/>
+            <h3>Audio/Video</h3>
+            <div class="title_border"></div>
+            <p>Listen or watch the audio/video files put up by medical fraternity to make sure that you grasp the essentials to tackle your aliment/disease. it will give you the intial information in the right direction</p>
+     <div class="btn btn-primary">Proceed</div>
+
+    </div>
+  </div>
+</div>
+
+ 
+
+
+<div>
+  
+  <router-outlet>
+
+  </router-outlet>
+</div>
+</div>
+</div>
+</div>

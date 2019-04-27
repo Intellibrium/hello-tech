@@ -1,0 +1,58 @@
+<!-- <label>Diagnosis</label> -->
+<div class="form-group">
+    <form [formGroup]="takeOpinionLabForm" (ngSubmit)="saveLabDetails(takeOpinionLabForm.value)">
+        <label for="name">Test Name:</label>
+        <input type="text" class="form-control" formControlName="testName" ng-model="formData.dname">
+
+        <div class="form-group">
+
+            <label for="name">Refered By:</label>
+            <input type="text" class="form-control" formControlName="referedByDoctor" ng-model="formData.disease">
+        </div>
+        <div class="form-group">
+
+            <label for="name">Observation:</label>
+            <input type="text" class="form-control" formControlName="observation" ng-model="formData.observation">
+        </div>
+        <div class="form-group">
+
+            <div class="form-group">
+                <label for="date-birth" class="control-label">Date:</label>
+                <div class="control">
+                    <input id="date-birth" class="form-control" type="date" formControlName="date" ng-model="dateBirth">
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+
+            <label for="name">Upload Prescription:</label>
+            <div ng-app="fileUpload" class="container">
+                <div class="col-md-6">
+                    <input type="file" fileinput="file" formControlName="reports" filepreview="filepreview" />
+                </div>
+                <div class="col-md-6">
+                    <!-- <img ng-src="{{filepreview}}" class="img-responsive" ng-show="filepreview"/> -->
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+            <div class="col-xs-4">
+                <br><br>
+                <button type="submit" class="btn   btn-block btn-info pull-left" style="font: 300 1.8rem 'Lato', Verdana, Helvetica, sans-serif; font-size: 100%">
+        Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                </button>
+            </div>
+        </div>
+    </form>
+    <div class="col-xs-4">
+    <br><br>
+    <a (click)="saveDiagnosisDetails()" [routerLink]="['../sotreat']" class="btn btn-block btn-info">
+   skip <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+   
+
+    </div>

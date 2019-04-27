@@ -1,0 +1,154 @@
+<div class="" style=" font-family:times new roman, Helvetica, sans-serif; font-size: 20px; margin-left: -135px">
+  <div class="col-sm-11 col-md-offset-1">
+
+    <div id="form-container">
+
+      <div class="page-header text-center">
+        <h2>Free chat with live Doctors</h2>
+        <div style="padding: 0% 0% 0% 0%;width: 100%;height: 20%;margin-top: 2%">
+          <div >
+
+            <h5>
+              <h4><em><b>You have a medical problem & we have a solution.</b></em></h4>
+            </h5>
+            <h5>
+            <h4><em><b>We are here to help you out right now.</b></em></h4>
+            </h5>
+            
+           
+             <h4>
+              
+               <b style="color: #00356d;">"Can you tell a bit about what is happening to you and we will connect to online doctor straight away".</b>
+
+             </h4>
+         
+          
+          </div>
+        </div>
+
+      </div>
+      <br>
+<!-- rrrrrrrrrrrramm -->
+
+<div class="" style="text-align: center;">
+
+  <h4><span class="Form-label-text">Chat for yourself</span> <input type="radio"  (click)="chatYu()" value="self"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <span class="Form-label-text">Chat for others</span> <input type="radio"  [(ngModel)]="raj" value="other"></h4>
+  <!-- c: <input type="radio"  [(ngModel)]="raj" value="rama"> -->
+ </div>
+
+
+
+
+
+
+
+
+<div [ngSwitch]="raj">
+    <div *ngSwitchCase="'other'">
+        <hr/>
+           <form ng-show="showRelation" class="form-horizontal" id="selectrelation" style="margin-left: 48%">
+       <div class="form-group">
+        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <div class="" >
+            <h4 style="color: white">Chat on behalf of : </h4>
+                <label class="btn btn-default">
+                    <input type="radio" name="gender"  [(ngModel)]="otherPat" value="father" (click)="cforOther('father')" /> Father
+                </label>
+                <label class="btn btn-default">
+                    <input type="radio" name="gender" [(ngModel)]="otherPat" value="mother" (click)="cforOther('father')"/> Mother
+                </label>
+                <label class="btn btn-default">
+                    <input type="radio" name="gender" [(ngModel)]="otherPat" value="wife"(click)="cforOther('father')" /> Wife
+                </label>
+                 <label class="btn btn-default">
+                    <input type="radio" name="gender" [(ngModel)]="otherPat" value="son"(click)="cforOther('father')" /> Son
+                </label>
+                 <label class="btn btn-default">
+                    <input type="radio" name="gender" [(ngModel)]="otherPat" value="Daughter"(click)="cforOther('father')" /> Daughter
+                </label>
+                 <label class="btn btn-default">
+                    <input type="radio" name="gender" [(ngModel)]="otherPat" value="friend" (click)="cforOther('father')"/> friend
+                </label>
+                <label class="btn btn-default">
+                    <input type="radio" name="gender" [(ngModel)]="otherPat" value="other"(click)="cforOther('ram')" /> Others
+                </label>
+             
+                
+   
+    
+
+   
+      
+            </div>
+        </div>
+    </div>
+        </form>
+</div>
+</div>
+</div>
+
+<!-- rammmmmmmmm -->
+   <div *ngIf="chatForOther==true">
+    <hr/>
+        <div class="col-sm-6 col-sm-offset-3" style="width: 30%; margin-left: 45%">
+    
+      <!-- <legend>Personal information:</legend> -->
+      <div class="form-group">
+      <label for="name">Name*</label>
+      <input type="text" class="form-control" id="myname" ng-model="mynames" name="name" style="width: 100% ; color: black" placeholder="Full Name" ng-required="true">
+      </div>
+
+   <label for="name">Gender*</label>
+  <div class="form-group">
+<label class="radio-inline">
+  <input type="radio" name="optradio"  ng-model="string" value="string" ng-required="true">Male
+  </label>
+  <label class="radio-inline">
+  <input type="radio" name="optradio" ng-model="string1" value="string1">Female
+</label>
+   </div>
+
+
+    <label for="date-birth" class="control-label">Date of birth*</label>
+      <div class="control">
+          <input id="date-birth" class="form-control" type="date" ng-model="dateBirth" style="width: 100%" ng-required="true">
+      </div>
+
+  <div class="form-group">
+      <label for="phn">Phone No.*</label>
+      <input type="number" class="form-control" id="phn" placeholder="Enter your 10 digit number"  name="name" style="width: 100% ; color: black" ng-pattern="/^[7-9][0-9]{9}$/" ng-required="true" maxlength="10" minlength="10">
+       <span ng-show="userForm.mobile_number.$error.pattern">Please enter valid number!</span>
+
+    </div> 
+
+
+    <div class="form-group">
+    <label for="Addmore">What are the problems you are facing?*</label>
+    <br>
+    <textarea type="text" class="form-control" id="Addmore" name="name" ng-model="Addmore" placeholder="Mention your problems" style="width: 100% ; color: black" ng-required="true"></textarea>
+    </div>
+
+   
+<div class="form-group">
+   <div class="col-xs-6 " >
+    <a  (click)="chatOthers()"class="btn btn-block btn-info">More Details</a>
+      
+    </div>
+
+    <div class="col-xs-6 " >
+      <button type="submit" [routerLink]="['../../p/chatd']" class="btn btn-block btn-info" >Directly Chat</button>
+      </div>
+      </div>
+
+
+  
+</div>
+</div>  
+
+      
+
+    
+</div>
+
+</div>

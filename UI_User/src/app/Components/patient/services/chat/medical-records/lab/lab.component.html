@@ -1,0 +1,77 @@
+<!-- <label>Diagnosis</label> -->
+<div style="text-align: center; font-family:times new roman, Helvetica, sans-serif; font-size: 20px;">
+ 
+    <h3 > Was any clinic test recommended & taken by you:</h3>
+    <br>
+    <input type="radio" [(ngModel)]="labTest" value="yes">Yes
+    <input type="radio" [(ngModel)]="labTest" value="No">No
+<div [ngSwitch]="labTest">
+    <div *ngSwitchCase="'yes'">
+        <hr/>
+        <div class="form-group">
+    <form [formGroup]="chatLabForm" (ngSubmit)="saveDiagnosisDetails(chatLabForm.value)">
+        <label for="name">Test Name:</label>
+        <input type="text" class="form-control" formControlName="testName" ng-model="formData.dname"  style="width: 20%; margin-left: 40%;">
+
+        
+        <div class="form-group">
+
+            <label for="name">Observation:</label>
+            <input type="text" class="form-control" formControlName="observation" ng-model="formData.observation"  style="width: 20%; margin-left: 40%;">
+        </div>
+        <div class="form-group">
+
+            <div class="form-group">
+                <label for="date-birth" class="control-label">Date:</label>
+                <div class="control">
+                    <input id="date-birth" class="form-control" type="date" formControlName="date" ng-model="dateBirth"  style="width: 10%; margin-left: 45%;">
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+
+            <label for="name" >Upload Lab Report:</label>
+            <div ng-app="fileUpload" class="container">
+                <div class="">
+                    <input type="file" fileinput="file" formControlName="reports" filepreview="filepreview"   style="width: 30%; margin-left: 38%;"/>
+                </div>
+                
+            </div>
+
+        </div>
+
+        <div class="">
+            <div class="">
+                <br><br>
+                <button type="submit" class="btn btn-primary btn-info ">
+        Save & Next
+                </button>
+            </div>
+           
+        </div>
+    </form>
+   
+   
+
+    </div>
+    </div>
+    <div *ngSwitchCase="'No'">
+
+
+         <div class="">
+    <br><br>
+    <a (click)="saveDiagnosisDetails()" [routerLink]="['../ctreat']" class="btn btn-primary btn-info" style="margin-left:-27px; position: fixed;">
+   skip 
+    </a>
+</div>
+    </div>
+    
+</div>
+<div>
+    
+</div> <br/>
+ <button (click)="saveDiagnosisDetails()" [routerLink]="['../chatd']" class="btn btn-primary btn-info "  style="margin-left:200px; position: fixed;">
+   Chat Directly 
+    </button>
+</div>

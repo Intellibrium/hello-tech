@@ -1,0 +1,546 @@
+<div class="container" style= "font-family : times new roman;">
+
+  <div class="col-md-12">
+
+        
+            <!-- <form> -->
+           <h1 class="col-md-offset-3" style="padding-bottom:20px;">Plan Your Medical Intake</h1>
+
+
+
+           <div class="col-md-3">
+          <h4 ><strong> Kind Of Plan:</strong></h4>
+           </div>
+           <div class="col-md-3"> 
+      <label class="btn btn-default btn-circle btn-lg "><input type="radio" [(ngModel)]="intakeType" value="daily"><strong style="margin-left:50px;">Daily</strong></label>
+    </div>
+
+
+    <div class="col-md-3">
+             <label class="btn btn-default btn-circle btn-lg "> <input type="radio" [(ngModel)]="intakeType" value="weekly"><strong style="margin-left:50px;">Weekly</strong></label>
+            </div>
+            <div class="col-md-3">
+            <label class="btn btn-default btn-circle btn-lg ">  <input type="radio" [(ngModel)]="intakeType" value="monthly"><strong style="margin-left:50px;">Monthly</strong></label>
+            </div>
+            <!-- </form> -->
+            <div [ngSwitch]="intakeType">
+
+
+
+                
+
+          <div class="col-md-12 col-md-offset-1" style="margin-top:30px;">
+                 <div class="row">
+                <div *ngSwitchCase="'daily'">
+<hr/>
+                
+                
+                  
+ <div class="form-group" style="padding-top:30px;">
+
+      <label for="select" class="col-md-3 control-label" style="font-size:18px;">Medicine</label>
+      <div class="col-md-4">
+
+        <select class="form-control multiple" id="select" >
+         
+            <option>Select</option>
+          <option>Paracetamol</option>
+  <option>sinarite</option>
+  <option>cheston cold</option>
+  <option>Amoxacyline</option>
+        </select>
+       
+      </div>
+    </div>
+
+
+    <div class="form-group" style="padding-top:30px;"  >
+  <label for="add" class="col-md-3 control-label" style="font-size:18px;"> Add Medicine</label>
+  <button class="btn btn-default col-md-4  "  (click)="addItem(name)" style="margin-left:12px;">+</button>
+
+<!-- <button class="btn btn-primary  "  (click)="addItem(name)">+</button> -->
+   <button *ngIf="update" (click)="updateItem()">Update</button>
+    <!-- <input type="text"  class="col-md-4" name="" [(ngModel)]="name"/>  -->
+     <ol>
+       <li *ngFor="let item of items; let i=index">
+        <span  *ngIf="!item.editMode">{{item.name}}</span>
+        <input type="text"   *ngIf="item.editMode" [(ngModel)]="item.name"/>
+         <button class="btn btn-primary" (click)="deleteItem(item)">X</button>
+         <button class="btn btn-primary" (click)="item.editMode= !item.editMode">Edit</button>
+       </li>
+     </ol>
+
+</div>
+<div class="form-group" style="padding-top:30px;">
+  <label for="select" class="col-md-3 control-label" style="font-size:18px;">Upload-Prescription</label>
+      <input type="file" class="btn btn-default col-md-4 " style="margin-left:12px;">
+
+    </div>
+
+  
+
+
+
+                  <form [formGroup]="dailyIntake" (ngSubmit)="planDailyIntake()">
+
+                    
+
+                    <div class="form-group" style="padding-top:30px;">
+                  
+
+                   <label for="select" type="date" class="col-md-3 control-label" style="font-size:18px;">Start Date</label>
+                  
+                  <div class="col-md-4"> 
+                  <input type="date" formControlName="startDate" >
+                </div>
+                
+                     </div>
+
+
+
+ <div class="form-group" style="padding-top:30px;">
+                  
+
+                   <label for="select" type="date" class="col-md-3 control-label" style="font-size:18px;">End Date</label>
+                  
+                  <div class="col-md-4"> 
+                  <input type="date" formControlName="endDate" >
+                </div>
+                
+                     </div>
+
+
+                <div class="form-group" style="padding-top:30px;">
+
+                <div class="col-md-3" > 
+              <input type="radio"  formControlName="times" [(ngModel)]="count" value="1" (click)="osgn(1)" style="font-size:18px;"><strong style="font-size:18px;">once</strong>
+            </div>
+              <div class="col-md-3">
+              <input type="radio"  formControlName="times" [(ngModel)]="count" value="2" (click)="osgn(2)"style="font-size:18px;" ><strong style="font-size:18px;">Twice</strong>
+            </div>
+            <div class="col-md-3">
+              <input type="radio"  formControlName="times" [(ngModel)]="count"  value="3" (click)="osgn(3)" style="font-size:18px;"><strong style="font-size:18px;">Thrice</strong>
+          </div> 
+<div class="form-group" style="padding-top:30px; margin-left:20px;">
+          <p  style="font-size:18px; padding-bottom:30px;"><strong> Number of times a day?   {{timesADay}} {{count}}</strong></p>
+        </div>
+              <div *ngFor="let x of timeslot">
+                 
+              <label for="select"  class="col-md-3 control-label" style="font-size:18px;"><strong> {{i}} Time: </strong></label>  
+
+              <input type="time"    formControlName="inTakeTime" [(ngModel)]="dailyTime[i]"id="time" placeholder="hh:mm:am"  />
+               <textarea   formControlName="note" [(ngModel)]="notesIntake[i]"placeholder="NOTES"  ></textarea> 
+                 </div>
+              
+               
+                     
+        </div>
+
+
+
+                <div class="form-group" style="padding-top:20px;"  >  
+                 
+<label for="select"  class="col-md-3 control-label" style="font-size:18px;"> Notification By:</label>
+</div> 
+  
+<div class="form-group " style="padding-top:30px;">
+            <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;">  Email </label>
+            <input type="checkbox" class="ram col-md-1 " formControlName="email" value="email" >
+          </div>
+
+          <div class="form-group " style="padding-top:30px;">
+             <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;"> Message </label>
+             <input type="checkbox" class="ram col-md-1 " formControlName="msg" value="msg">
+           </div>
+           <div class="form-group " style="padding-top:30px;">
+            <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;">  Call </label>
+            <input type="checkbox" class="ram col-md-1" formControlName="call" value="call">
+                 </div>    
+           
+                     
+
+        <button type="submit" class=" btn btn-primary col-md-2 col-md-offset-3" >save</button> 
+
+<!-- <div class="form-group" style="padding-top:30px;">
+          <p class="col-md-6" style="font-size:18px; padding-bottom:30px;"> Number of times a day?   {{timesADay}} {{count}}</p>
+              
+ </div> -->
+           <!-- <div class="form-group" style="padding-top:50px;">
+
+
+              <div class="col-md-4" *ngFor="let x of timeslot; let i = index">
+                 
+           <strong> {{i}} Time: </strong> <input type="time" formControlName="inTakeTime" [(ngModel)]="dailyTime[i]"id="time" placeholder="hh:mm:am"  />
+               <textarea type="textarea" formControlName="note" [(ngModel)]="notesIntake[i]"placeholder="NOTES" ></textarea>
+              <div *ngIf="dailyIntake.controls['note'].hasError('pattern')">
+              {{error}} rama 
+              </div>  
+              
+                    
+
+                <div>
+                  <button type="submit" class="btn btn-primary col-md-2" style="margin-left:100px;">save</button>
+                </div>
+                 </div> -->
+                
+               <!--  </div> -->
+
+                  </form>
+
+                 </div>
+ 
+
+ </div>
+</div>
+
+ 
+
+<div class="col-md-12 col-md-offset-1" style="margin-top:0px;">
+                 <div class="row">
+                    <div *ngSwitchCase="'weekly'">
+                    <hr/> 
+
+<div class="form-group" style="padding-top:30px;"> 
+                      <a *ngFor="let day of weekDays">
+              <input type="radio" [(ngModel)]="weekdayM" value="{{day}}"><strong style="font-size:18px;">{{day}}</strong>
+                      </a>
+            </div>
+
+            <div *ngIf="weekdayM !='null' ">
+
+                      <div class="form-group" style="padding-top:30px;">
+
+      <label for="select" class="col-md-3 control-label" style="font-size:18px;">Medicine</label>
+      <div class="col-md-4">
+
+        <select class="form-control multiple" id="select" >
+         
+            <option>Select</option>
+          <option>Paracetamol</option>
+  <option>sinarite</option>
+  <option>cheston cold</option>
+  <option>Amoxacyline</option>
+        </select>
+       
+      </div>
+    </div>
+
+
+    <div class="form-group" style="padding-top:30px;"  >
+  <label for="add" class="col-md-3 control-label" style="font-size:18px;"> Add Medicine</label>
+  <button class="btn btn-default col-md-4  "  (click)="addItem(name)" style="margin-left:12px;">+</button>
+
+<!-- <button class="btn btn-primary  "  (click)="addItem(name)">+</button> -->
+   <button *ngIf="update" (click)="updateItem()">Update</button>
+    <!-- <input type="text"  class="col-md-4" name="" [(ngModel)]="name"/>  -->
+     <ol>
+       <li *ngFor="let item of items; let i=index">
+        <span  *ngIf="!item.editMode">{{item.name}}</span>
+        <input type="text"   *ngIf="item.editMode" [(ngModel)]="item.name"/>
+         <button class="btn btn-primary" (click)="deleteItem(item)">X</button>
+         <button class="btn btn-primary" (click)="item.editMode= !item.editMode">Edit</button>
+       </li>
+     </ol>
+
+</div>
+<div class="form-group" style="padding-top:30px;">
+  <label for="select" class="col-md-3 control-label" style="font-size:18px;">Upload-Prescription</label>
+      <input type="file" class="btn btn-default col-md-4 " style="margin-left:12px;">
+
+    </div>
+
+ <form [formGroup]="dailyIntake" (ngSubmit)="planDailyIntake()">
+
+                    <div class="form-group" style="padding-top:30px;">
+                  
+
+                   <label for="select" type="date" class="col-md-3 control-label" style="font-size:18px;">Start Date</label>
+                  
+                  <div class="col-md-4"> 
+                  <input type="date" formControlName="startDate" >
+                </div>
+                
+                     </div>
+
+
+
+ <div class="form-group" style="padding-top:30px;">
+                  
+
+                   <label for="select" type="date" class="col-md-3 control-label" style="font-size:18px;">End Date</label>
+                  
+                  <div class="col-md-4"> 
+                  <input type="date" formControlName="endDate" >
+                </div>
+                
+                     </div>
+
+
+            
+<!--  <div class="form-group" style="padding-top:30px;"> 
+            
+              
+              <input type="radio"  [(ngModel)]="count" value="1" (click)="osgn(1)"> <strong style="font-size:18px;">once</strong>
+              <input type="radio" [(ngModel)]="count" value="2" (click)="osgn(2)" ><strong style="font-size:18px;">Twice</strong>
+              <input type="radio" [(ngModel)]="count"  value="3" (click)="osgn(3)" ><strong style="font-size:18px;">Thrice</strong>
+              <p  style="font-size:18px; padding-bottom:30px;"> Number of times a day?   {{timesADay}} {{count}}</p>
+              <div *ngFor="let x of timeslot">
+                 
+               Time:  <input type="time" id="time" placeholder="hh:mm:am"  />
+               <textarea type="text" name="note" placeholder="NOTES" ></textarea> 
+                 </div>
+              <button type="submit" class=" btn btn-primary" (click)="planWeeklyIntake()">save</button>  
+                    
+            
+
+          </div> -->
+                    
+
+<div class="form-group" style="padding-top:30px;">
+
+                <div class="col-md-3" > 
+              <input type="radio"  formControlName="times" [(ngModel)]="count" value="1" (click)="osgn(1)" style="font-size:18px;"><strong style="font-size:18px;">once</strong>
+            </div>
+              <div class="col-md-3">
+              <input type="radio"  formControlName="times" [(ngModel)]="count" value="2" (click)="osgn(2)"style="font-size:18px;" ><strong style="font-size:18px;">Twice</strong>
+            </div>
+            <div class="col-md-3">
+              <input type="radio"  formControlName="times" [(ngModel)]="count"  value="3" (click)="osgn(3)" style="font-size:18px;"><strong style="font-size:18px;">Thrice</strong>
+          </div> 
+<div class="form-group" style="padding-top:30px; margin-left:20px;">
+
+          <p  style="font-size:18px; padding-bottom:30px;"> <strong>Number of times a day?   {{timesADay}} {{count}}</strong></p>
+        </div>
+              <div *ngFor="let x of timeslot">
+                 
+              <label for="select"  class="col-md-3 control-label" style="font-size:18px;"><strong> {{i}} Time: </strong></label>  
+
+              <input type="time"    formControlName="inTakeTime" [(ngModel)]="dailyTime[i]"id="time" placeholder="hh:mm:am"  />
+               <textarea   formControlName="note" [(ngModel)]="notesIntake[i]"placeholder="NOTES"  ></textarea> 
+                 </div>
+              
+               
+                     
+        </div>
+
+
+
+       <!--            <div class="form-group" style="padding-top:0px;"  >  
+                 
+<label for="select"  class="col-md-3 control-label" style="font-size:18px;"> Notification By:</label> 
+  
+
+            <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;">  Email </label>
+            <input type="checkbox" class="ram btn btn-primary" formControlName="email" value="email">
+             <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;"> Message </label>
+             <input type="checkbox" class="ram btn btn-primary" formControlName="msg" value="msg">
+            <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;">  Call </label>
+            <input type="checkbox" class="ram btn btn-primary" formControlName="call" value="call">
+                     
+           
+                     </div> -->
+
+
+
+                <div class="form-group" style="padding-top:20px;"  >  
+                 
+<label for="select"  class="col-md-3 control-label" style="font-size:18px;"> Notification By:</label> </div>
+  
+<div class="form-group " style="padding-top:30px;">
+            <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;">  Email </label>
+            <input type="checkbox" class="ram col-md-1" formControlName="email" value="email" >
+          </div>
+
+          <div class="form-group " style="padding-top:30px;">
+             <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;"> Message </label>
+             <input type="checkbox" class="ram  col-md-1" formControlName="msg" value="msg">
+           </div>
+           <div class="form-group" style="padding-top:30px;">
+            <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;">  Call </label>
+            <input type="checkbox" class="ram col-md-1" formControlName="call" value="call">
+                 </div>    
+           
+                     
+
+
+
+<button type="submit" class=" btn btn-primary col-md-2 col-md-offset-3" >save</button> 
+</form>
+
+
+
+
+
+                    </div>
+
+
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+<div class="col-md-12 col-md-offset-1" style="margin-top:0px;">
+                 <div class="row">
+
+          <div *ngSwitchCase="'monthly'">
+            <hr/>
+
+
+                           <div class="form-group" style="padding-top:30px;">
+
+      <label for="select" class="col-md-3 control-label" style="font-size:18px;">Medicine</label>
+      <div class="col-md-4">
+
+        <select class="form-control multiple" id="select" >
+         
+            <option>Select</option>
+          <option>Paracetamol</option>
+  <option>sinarite</option>
+  <option>cheston cold</option>
+  <option>Amoxacyline</option>
+        </select>
+       
+      </div>
+    </div>
+
+
+    <div class="form-group" style="padding-top:30px;"  >
+  <label for="add" class="col-md-3 control-label" style="font-size:18px;"> Add Medicine</label>
+  <button class="btn btn-default col-md-4  "  (click)="addItem(name)" style="margin-left:12px;">+</button>
+
+<!-- <button class="btn btn-primary  "  (click)="addItem(name)">+</button> -->
+   <button *ngIf="update" (click)="updateItem()">Update</button>
+    <!-- <input type="text"  class="col-md-4" name="" [(ngModel)]="name"/>  -->
+     <ol>
+       <li *ngFor="let item of items; let i=index">
+        <span  *ngIf="!item.editMode">{{item.name}}</span>
+        <input type="text"   *ngIf="item.editMode" [(ngModel)]="item.name"/>
+         <button class="btn btn-primary" (click)="deleteItem(item)">X</button>
+         <button class="btn btn-primary" (click)="item.editMode= !item.editMode">Edit</button>
+       </li>
+     </ol>
+
+</div>
+<div class="form-group" style="padding-top:30px;">
+  <label for="select" class="col-md-3 control-label" style="font-size:18px;">Upload-Prescription</label>
+      <input type="file" class="btn btn-default col-md-4 " style="margin-left:12px;">
+
+    </div>
+
+           <form [formGroup]="monthlyIntake" (ngSubmit)="planMonthlyIntake()">
+           
+
+
+  <div class="form-group" style="padding-top:30px;">
+                  
+
+                   <label for="select" type="date" class="col-md-3 control-label" style="font-size:18px;">Start Date</label>
+                  
+                  <div class="col-md-4"> 
+                  <input type="date" formControlName="startDate" >
+                </div>
+                
+                     </div>
+
+
+
+ <div class="form-group" style="padding-top:30px;">
+                  
+
+                   <label for="select" type="date" class="col-md-3 control-label" style="font-size:18px;">End Date</label>
+                  
+                  <div class="col-md-4"> 
+                  <input type="date" formControlName="endDate" >
+                </div>
+                
+                     </div>
+
+
+
+
+
+
+ <div class="form-group" style="padding-top:30px;">
+                  
+
+                   <label for="select" type="time" class="col-md-3 control-label" style="font-size:18px;">Time</label>
+                  
+                  <div class="col-md-4"> 
+                   <input type="time"  id="time" formControlName="time"placeholder="hh:mm:am"  />
+                </div>
+                
+                     </div>
+
+
+
+
+ <div class="form-group" style="padding-top:30px;">
+                  
+
+                   <label for="select" type="text" class="col-md-3 control-label" style="font-size:18px;">Reminder</label>
+                  
+                  <div class="col-md-4"> 
+                 <textarea type="text"  class=" col-md-4" name="note" formControlName="notes" placeholder="NOTES" ></textarea>
+                </div>
+                
+                     </div>
+
+
+
+
+                <div class="form-group" style="padding-top:20px;"  >  
+                 
+<label for="select"  class="col-md-3 control-label" style="font-size:18px;"> Notification By:</label> </div>
+  
+<div class="form-group " style="padding-top:30px;">
+            <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;">  Email </label>
+            <input type="checkbox" class="ram col-md-1" formControlName="email" value="email" >
+          </div>
+
+          <div class="form-group " style="padding-top:30px;">
+             <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;"> Message </label>
+             <input type="checkbox" class="ram col-md-1" formControlName="msg" value="msg">
+           </div>
+           <div class="form-group" style="padding-top:30px;">
+            <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;">  Call </label>
+            <input type="checkbox" class="ram col-md-1" formControlName="call" value="call">
+                 </div>    
+           
+                     
+
+
+     
+<div  class="form-group" style="padding-top:50px;" >
+     <button type="submit" class="btn btn-primary col-md-2 col-md-offset-3">save</button>       
+     
+</div>
+
+
+      </form>
+       
+      
+      </div> 
+            </div>
+
+          </div>
+      
+          </div>
+
+
+
+
+
+
+
+
+
+</div>
+</div>

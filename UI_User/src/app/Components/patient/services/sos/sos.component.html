@@ -1,0 +1,22 @@
+<div  *ngIf="formTo" class="container">
+    <div>
+      <h2>Emergency For</h2>
+      Fire :<input type="radio" [(ngModel)]="emerFor" value= "fire" (click)="saveEmer($event)">
+      accident:<input type="radio" [(ngModel)]="emerFor" value= "accident" (click)="saveEmer($event)">
+      heart problem :<input type="radio" [(ngModel)]="emerFor"value= "heart" (click)="saveEmer($event)">
+      
+    </div>
+
+    <div *ngIf="emergency">
+       <h1> Are you sure You need emergency for  {{emergencyFor}}</h1>
+    
+
+  <button (click)="saveDetailForEmer()">Need Emergency </button>
+     
+</div>
+</div>
+ <div *ngIf="saved">
+  <div class="loader"></div>
+              
+  Your Request is Getting saved we will contact You soon
+                      </div>

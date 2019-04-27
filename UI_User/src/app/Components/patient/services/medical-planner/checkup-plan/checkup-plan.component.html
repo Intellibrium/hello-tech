@@ -1,0 +1,566 @@
+<div class="container" style= "font-family : times new roman;">
+  <div class="col-md-12">
+
+                   <h1 class="col-md-offset-3">Plan your Chekup</h1>
+
+                  <h4><strong> Kind Of Plan:</strong></h4>
+           
+            
+            
+
+ <div class="col-md-3"> 
+      <label class="btn btn-default btn-circle btn-lg "><input type="radio" [(ngModel)]="checkupType" value="daily"><strong style="margin-left:50px;">Daily</strong></label>
+    </div>
+
+
+    <div class="col-md-3">
+             <label class="btn btn-default btn-circle btn-lg "> <input type="radio" [(ngModel)]="checkupType" value="weekly"><strong style="margin-left:50px;">Weekly</strong></label>
+            </div>
+            <div class="col-md-3">
+            <label class="btn btn-default btn-circle btn-lg ">  <input type="radio" [(ngModel)]="checkupType" value="monthly"><strong style="margin-left:50px;">Monthly</strong></label>
+            </div>
+<div class="col-md-3">
+       <label class="btn btn-default btn-circle btn-lg ">     <input type="radio" [(ngModel)]="checkupType" value="custom"><strong style="margin-left:50px;">Custom</strong></label>
+            </div>
+
+<div [ngSwitch]="checkupType">
+                <div class="col-md-12 col-md-offset-1" style="margin-top:70px;">
+                 <div class="row">
+
+                <div *ngSwitchCase="'daily'"> 
+                  <hr/>
+                  <div>
+                  <form [formGroup]="dailyCheckup" (ngSubmit)="planDailyCheckup()">
+            <div class="form-group" style="padding-top:30px;">
+
+      <label for="select" class="col-md-3 control-label" style="font-size:18px;">CheckUp Type</label>
+      <div class="col-md-4">
+
+        <select class="form-control multiple" id="select" >
+         
+            <option>Select</option>
+          <option></option>
+  <option></option>
+  <option></option>
+  <option></option>
+        </select>
+       
+      </div>
+
+      
+
+    </div>
+
+ <div class="form-group" style="padding-top:30px;">
+  <label  class="col-md-3 control-label" style="font-size:18px;">Upload-Prescription</label>
+      <input type="file" class="btn btn-default col-md-4 " style="margin-left:12px;">
+
+    </div>
+
+
+
+                   <div class="form-group" style="padding-top:30px;"  > 
+
+
+                  
+                   <label  type="date" class="col-md-3 control-label" style="font-size:18px;">Start Date</label>
+                  
+                  <div class="col-md-4"> 
+                  <input type="date" formControlName="startDate" >
+                </div>
+              </div>
+            <div class="form-group" style="padding-top:30px;"  >       
+     <label  type="time" class="col-md-3 control-label" style="font-size:18px;"> Time</label> 
+
+<div class="col-md-4">
+      <input type="time" formControlName="time" placeholder="hh:mm:am"  />
+    </div>
+
+  </div>
+                 
+<div class="form-group" style="padding-top:30px;"  > 
+
+              <label  type="text" class="col-md-3 control-label" style="font-size:18px;"> Notes </label>
+<div class="col-md-4">
+                <textarea type="text" name="note" formControlName="note" placeholder="NOTES" ></textarea>
+                
+</div>
+</div>
+<div class="form-group" style="padding-top:50px;"  >
+              <label  type="text" class="col-md-3 control-label" style="font-size:18px;">Place </label>
+
+<div class="col-md-4">
+                <input type="text" name="note" formControlName="place" placeholder="Place" >
+</div>
+
+                 
+</div>
+
+<div class="form-group" style="padding-top:50px;"  > 
+
+<label  type="date" class="col-md-3 control-label" style="font-size:18px;"> End Date:</label> 
+
+                    
+<div class="col-md-3">
+                    <input type="date" formControlName="endDate" >
+                    
+                  
+</div>
+</div>
+
+
+                  
+
+                  
+               
+<div class="form-group" style="padding-top:20px;"  >  
+                 
+<label for="select"  class="col-md-3 control-label" style="font-size:18px;"> Notification By:</label> </div>
+  
+<div class="form-group " style="padding-top:30px;">
+            <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;">  Email </label>
+            <input type="checkbox" class="ram col-md-1" formControlName="email" value="email" >
+          </div>
+
+          <div class="form-group " style="padding-top:30px;">
+             <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;"> Message </label>
+             <input type="checkbox" class="ram col-md-1" formControlName="msg" value="msg">
+           </div>
+           <div class="form-group" style="padding-top:30px;">
+            <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;">  Call </label>
+            <input type="checkbox" class="ram col-md-1" formControlName="call" value="call">
+                 </div>    
+                
+
+
+
+                <div>
+                  <button type="submit"  class="btn btn-primary col-md-2 col-md-offset-3">save</button>
+                </div>
+                  
+
+                  </form>
+              </div>
+                </div>
+                    
+
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="col-md-12 col-md-offset-1" style="margin-top:0px;">
+                 <div class="row">
+                    <div *ngSwitchCase="'weekly'">
+<hr/>
+                    
+                    <div class="form-group"> 
+                      <a *ngFor="let day of weekDays">
+              <input type="radio" [(ngModel)]="weekdayM" value="{{day}}"><strong style="font-size:18px;">{{day}}</strong>
+                      </a>
+            </div>
+            <div *ngIf="weekdayM !='null' ">
+              <form [formGroup]="weeklyCheckup" (ngSubmit)=" planWeeklyCheckup()">
+           <div class="form-group" style="padding-top:30px;">
+
+      <label for="select" class="col-md-3 control-label" style="font-size:18px;">CheckUp Type</label>
+      <div class="col-md-4">
+
+        <select class="form-control multiple" id="select" >
+         
+            <option>Select</option>
+          <option></option>
+  <option></option>
+  <option></option>
+  <option></option>
+        </select>
+       
+      </div>
+
+      
+
+    </div>
+
+
+
+                  <div class="form-group" style="padding-top:30px;">
+  <label for="select" class="col-md-3 control-label" style="font-size:18px;">Upload-Prescription</label>
+      <input type="file" class="btn btn-default col-md-4 " style="margin-left:12px;">
+
+    </div>
+
+
+
+                   <div class="form-group" style="padding-top:30px;"  > 
+
+
+                  
+                   <label for="select" type="date" class="col-md-3 control-label" style="font-size:18px;">Start Date</label>
+                  
+                  <div class="col-md-4"> 
+                  <input type="date" formControlName="startDate" >
+                </div>
+              </div>
+            <div class="form-group" style="padding-top:30px;"  >       
+     <label for="select" type="time" class="col-md-3 control-label" style="font-size:18px;"> Time</label> 
+
+<div class="col-md-4">
+      <input type="time" formControlName="time" placeholder="hh:mm:am"  />
+    </div>
+
+  </div>
+                 
+<div class="form-group" style="padding-top:30px;"  > 
+
+              <label for="select" type="text" class="col-md-3 control-label" style="font-size:18px;"> Notes </label>
+<div class="col-md-4">
+                <textarea type="text" name="note" formControlName="note" placeholder="NOTES" ></textarea>
+                
+</div>
+</div>
+<div class="form-group" style="padding-top:50px;"  >
+              <label for="select" type="text" class="col-md-3 control-label" style="font-size:18px;">Place </label>
+
+<div class="col-md-4">
+                <input type="text" name="note" formControlName="place" placeholder="Place" >
+</div>
+
+                 
+</div>
+
+<div class="form-group" style="padding-top:50px;"  > 
+
+<label for="select" type="date" class="col-md-3 control-label" style="font-size:18px;"> End Date:</label> 
+
+                    
+<div class="col-md-3">
+                    <input type="date" formControlName="endDate" >
+                    
+                  
+</div>
+</div>
+
+
+                  
+
+                  
+               
+
+       <div class="form-group" style="padding-top:20px;"  >  
+                 
+<label for="select"  class="col-md-3 control-label" style="font-size:18px;"> Notification By:</label> </div>
+  
+<div class="form-group " style="padding-top:30px;">
+            <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;">  Email </label>
+            <input type="checkbox" class="ram col-md-1" formControlName="email" value="email" >
+          </div>
+
+          <div class="form-group " style="padding-top:30px;">
+             <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;"> Message </label>
+             <input type="checkbox" class="ram col-md-1" formControlName="msg" value="msg">
+           </div>
+           <div class="form-group" style="padding-top:30px;">
+            <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;">  Call </label>
+            <input type="checkbox" class="ram col-md-1" formControlName="call" value="call">
+                 </div>    
+                
+
+
+
+                <div>
+                  <button type="submit"  class="btn btn-primary col-md-2 col-md-offset-3">save</button>
+                </div>
+                  
+
+
+
+                  </form>
+            </div>
+                    </div>
+
+                  </div>
+                </div>
+
+
+<div class="col-md-12 col-md-offset-1" style="margin-top:0px;">
+                 <div class="row">
+          <div *ngSwitchCase="'monthly'">
+            <hr/>
+           <form [formGroup]="monthlyCheckup" (ngSubmit)="planMonthlyCheckup()">
+   <div class="form-group" style="padding-top:30px;">
+
+      <label  class="col-md-3 control-label" style="font-size:18px;">CheckUp Type</label>
+      <div class="col-md-4">
+
+        <select class="form-control multiple" id="select" >
+         
+            <option>Select</option>
+          <option></option>
+  <option></option>
+  <option></option>
+  <option></option>
+        </select>
+       
+      </div>
+
+      
+
+    </div>
+
+
+
+                   <div class="form-group" style="padding-top:30px;">
+  <label for="select" class="col-md-3 control-label" style="font-size:18px;">Upload-Prescription</label>
+      <input type="file" class="btn btn-default col-md-4 " style="margin-left:12px;">
+
+    </div>
+
+
+
+                   <div class="form-group" style="padding-top:30px;"  > 
+
+
+                  
+                   <label for="select" type="date" class="col-md-3 control-label" style="font-size:18px;">Start Date</label>
+                  
+                  <div class="col-md-4"> 
+                  <input type="date" formControlName="startDate" >
+                </div>
+              </div>
+            <div class="form-group" style="padding-top:30px;"  >       
+     <label for="select" type="time" class="col-md-3 control-label" style="font-size:18px;"> Time</label> 
+
+<div class="col-md-4">
+      <input type="time" formControlName="time" placeholder="hh:mm:am"  />
+    </div>
+
+  </div>
+                 
+<div class="form-group" style="padding-top:30px;"  > 
+
+              <label for="select" type="text" class="col-md-3 control-label" style="font-size:18px;"> Notes </label>
+<div class="col-md-4">
+                <textarea type="text" name="note" formControlName="note" placeholder="NOTES" ></textarea>
+                
+</div>
+</div>
+<div class="form-group" style="padding-top:50px;"  >
+              <label for="select" type="text" class="col-md-3 control-label" style="font-size:18px;">Place </label>
+
+<div class="col-md-4">
+                <input type="text" name="note" formControlName="place" placeholder="Place" >
+</div>
+
+                 
+</div>
+
+<div class="form-group" style="padding-top:50px;"  > 
+
+<label for="select" type="date" class="col-md-3 control-label" style="font-size:18px;"> End Date:</label> 
+
+                    
+<div class="col-md-3">
+                    <input type="date" formControlName="endDate" >
+                    
+                  
+</div>
+</div>
+
+
+                  
+
+                  
+               
+<div class="form-group" style="padding-top:20px;"  >  
+                 
+<label for="select"  class="col-md-3 control-label" style="font-size:18px;"> Notification By:</label> </div>
+  
+<div class="form-group " style="padding-top:30px;">
+            <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;">  Email </label>
+            <input type="checkbox" class="ram col-md-1" formControlName="email" value="email" >
+          </div>
+
+          <div class="form-group " style="padding-top:30px;">
+             <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;"> Message </label>
+             <input type="checkbox" class="ram col-md-1" formControlName="msg" value="msg">
+           </div>
+           <div class="form-group" style="padding-top:30px;">
+            <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;">  Call </label>
+            <input type="checkbox" class="ram col-md-1" formControlName="call" value="call">
+                 </div>    
+                
+
+
+
+                <div>
+                  <button type="submit"  class="btn btn-primary col-md-2 col-md-offset-3">save</button>
+                </div>
+                  
+
+      </form>
+      </div> 
+
+</div>
+</div>
+
+
+    
+
+
+
+
+
+
+
+<div class="col-md-12 col-md-offset-1" style="margin-top:0px;">
+                 <div class="row">
+    <div *ngSwitchCase="'custom'">
+<hr/>
+ <form [formGroup]="customCheckup" (ngSubmit)="planCustomCheckup()">
+  
+
+
+       <div class="form-group" style="padding-top:30px;">
+
+      <label for="select" class="col-md-3 control-label" style="font-size:18px;">CheckUp Type </label>
+      <div class="col-md-4">
+
+        <select class="form-control multiple" id="select" >
+         
+            <option>Select</option>
+          <option></option>
+  <option></option>
+  <option></option>
+  <option></option>
+        </select>
+       
+      </div>
+
+      
+
+    </div>
+
+
+
+                    <div class="form-group" style="padding-top:30px;">
+  <label for="select" class="col-md-3 control-label" style="font-size:18px;">Upload-Prescription</label>
+      <input type="file" class="btn btn-default col-md-4 " style="margin-left:12px;">
+
+    </div>
+
+
+
+                   <div class="form-group" style="padding-top:30px;"  > 
+
+
+                  
+                   <label for="select" type="date" class="col-md-3 control-label" style="font-size:18px;">Start Date</label>
+                  
+                  <div class="col-md-4"> 
+                  <input type="date" formControlName="startDate" >
+                </div>
+              </div>
+            <div class="form-group" style="padding-top:30px;"  >       
+     <label for="select" type="time" class="col-md-3 control-label" style="font-size:18px;"> Time</label> 
+
+<div class="col-md-4">
+      <input type="time" formControlName="time" placeholder="hh:mm:am"  />
+    </div>
+
+  </div>
+                 
+<div class="form-group" style="padding-top:30px;"  > 
+
+              <label for="select" type="text" class="col-md-3 control-label" style="font-size:18px;"> Notes </label>
+<div class="col-md-4">
+                <textarea type="text" name="note" formControlName="note" placeholder="NOTES" ></textarea>
+                
+</div>
+</div>
+<div class="form-group" style="padding-top:50px;"  >
+              <label for="select" type="text" class="col-md-3 control-label" style="font-size:18px;">Place </label>
+
+<div class="col-md-4">
+                <input type="text" name="note" formControlName="place" placeholder="Place" >
+</div>
+
+                 
+</div>
+
+<div class="form-group" style="padding-top:50px;"  > 
+
+<label for="select" type="date" class="col-md-3 control-label" style="font-size:18px;"> End Date:</label> 
+
+                    
+<div class="col-md-3">
+                    <input type="date" formControlName="endDate" >
+                    
+                  
+</div>
+</div>
+
+
+                  
+
+                  
+               
+<div class="form-group" style="padding-top:20px;"  >  
+                 
+<label for="select"  class="col-md-3 control-label" style="font-size:18px;"> Notification By:</label> </div>
+  
+<div class="form-group " style="padding-top:30px;">
+            <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;">  Email </label>
+            <input type="checkbox" class="ram col-md-1" formControlName="email" value="email" >
+          </div>
+
+          <div class="form-group " style="padding-top:30px;">
+             <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;"> Message </label>
+             <input type="checkbox" class="ram col-md-1" formControlName="msg" value="msg">
+           </div>
+           <div class="form-group" style="padding-top:30px;">
+            <label for="select" type="checkbox" class="col-md-2 control-label" style="font-size:18px;">  Call </label>
+            <input type="checkbox" class="ram col-md-1" formControlName="call" value="call">
+                 </div>    
+                
+
+
+
+                <div>
+                  <button type="submit"  class="btn btn-primary col-md-2 col-md-offset-3">save</button>
+                </div>
+                  
+
+      </form>
+
+    </div>
+            </div>
+      
+
+
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+      </div>
+    </div>

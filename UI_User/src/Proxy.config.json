@@ -1,0 +1,10 @@
+{
+
+    "/api/*":
+    
+    {
+      "target": "http://192.168.1.13:8082/newUser",
+      "secure": false
+    }
+
+}

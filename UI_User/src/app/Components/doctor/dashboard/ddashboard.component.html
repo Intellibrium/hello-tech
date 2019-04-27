@@ -1,0 +1,63 @@
+<style type="text/css">
+ 
+</style>
+
+<div class="navbar navbar-inverse navbar-fixed-top" style="background-color: #47b2d8;border-bottom: none;">
+  <ul class="nav navbar-nav navbar-left ">
+     <li><button class="sidebarbtn navbar-brand" style="left: 30px; background-color: #47b2d8;">
+      <span></span>
+    </button></li> 
+      <li><a class="navbar-brand" href="#" style="margin-top: -15px;  margin-left: 114px;"><img src="./assets/images/logo.jpg" width="220px" height="57px"></a></li>
+      </ul>
+    <ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
+      <li><a (click)="ram()" style="font-size: 20px;margin-top:6px;color: #f7f5f4;">Home</a></li>
+      <!-- <li> <a (click)="sosF()">sos</a></li> -->
+      <!-- <li><a [routerLink]="['/logs']" style="font-size: 20px;margin-top:6px;color: #f7f5f4;">Login/SignUp</a></li> -->
+       <li><button type="button" class="btn btn-info" routerLink="../l"  style="font-size: 20px;margin-top:6px;color: #f7f5f4;border: 1px solid black;">Logout</button> 
+        <!-- data-toggle="modal" data-target="#myModal"   -->
+      </li>
+
+    </ul>
+
+    <div class="sidebar col-md-3" style="background-color: #47b2d8">
+  <ul class="sidebar-nav nav " >
+                <li class="sidebar-brand">
+                    <img [src]="imageSrc" 
+                            (load)="handleImageLoad()" 
+                            [class.loaded]="imageLoaded"  class="avatar img-circle img-thumbnail" alt="avatar" style="height: 160%;width: 70%;margin-left: 7%"><br>
+<!--                           <h6>Update Your Profile Picture</h6><br> -->                          
+                    
+                    <!-- <input type="file" class="text-center center-block well well-sm" accept="image/*"
+                        (change)="handleInputChange($event)" style="color: #204c93;width: 40px;height: 20px"> -->
+                </li><br><br>
+                <li>
+                        <p class="fa fa-anchor solo" style="color: white;margin-left: 10%" [routerLink]="['./prof']">Name: {{oldFname}} {{oldLname}}</p>
+                </li>
+                <li>
+                        <p class="fa fa-anchor solo" style="color: white;margin-left: 10%">Account id: {{oldAccountId}} </p>
+                </li>
+                <li>
+                        <p class="fa fa-anchor solo collapsed fa fa-globe fa-lg" data-toggle="collapse" data-target="#service" style="color: white;margin-left: 10%">Patient id: {{oldPatientId}} <span class="glyphicon glyphicon-chevron-down pull-right" style="color:white"></span> </p>
+                </li>               
+                  <ul class="sub-menu collapse" id="service">
+                  <li style="color: white;margin-left: 14%">Sub-Patient id: {{oldSubPatientId1}}</li>
+                  <li style="color: white;margin-left: 14%">Sub-Patient id: {{oldSubPatientId2}}</li>
+                  <li style="color: white;margin-left: 14%">Sub-Patient id: {{oldSubPatientId3}}</li>
+                </ul>
+
+                <li>
+                  <button class="btn btn-primary"  style="margin-left: 30%" (click)="logOut()">Logout</button>
+                </li>
+  </ul>
+</div>
+</div>
+
+
+<div style="margin-top: 70px;" class="">
+<router-outlet></router-outlet>
+</div>
+
+<div class="footer" style="top: 98%;" >
+  <div class="copyright" style="text-align: center; font-family:times new roman, Helvetica, sans-serif; font-size: 10px;" >© Techgenomes Solutions Private Limited (OPC) 2017. All rights reserved.</div>
+<!--   <div class="power">Powered by Techgenomes.</div>
+ --></div>

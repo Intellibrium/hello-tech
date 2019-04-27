@@ -1,0 +1,213 @@
+
+<div class="container" style= "font-family : times new roman; text-align: center;">
+<div class="col-md-12">
+<div class="row">
+
+
+    
+
+<h2 style="padding-top:30px;">Avail The Emergency Case</h2>
+
+
+<h3>Please Select appropriate options to help us care in the right way</h3>
+
+
+
+
+    <div class="Form-section">
+
+       <label style="font-size:20px; padding-right:50px; padding-top:30px;" >Whom you want to ask for?</label>
+       
+
+        <label class="Form-label--tick" >
+            <input type="radio" value="F" name="SomeRadio" class="Form-label-radio">
+            <span class="Form-label-text">Father</span>
+        </label>
+        <label class="Form-label--tick">
+            <input type="radio" value="M" name="SomeRadio" class="Form-label-radio" >
+            <span class="Form-label-text">Mother</span>
+        </label>
+        <label class="Form-label--tick">
+            <input type="radio" value="W" name="SomeRadio" class="Form-label-radio" >
+            <span class="Form-label-text">Wife</span>
+        </label>
+         <label class="Form-label--tick">
+            <input type="radio" value="H" name="SomeRadio" class="Form-label-radio" >
+            <span class="Form-label-text">Husband</span>
+        </label>
+         <label class="Form-label--tick">
+            <input type="radio" value="S" name="SomeRadio" class="Form-label-radio" >
+            <span class="Form-label-text">Son</span>
+        </label>
+         <label class="Form-label--tick">
+            <input type="radio" value="D" name="SomeRadio" class="Form-label-radio" >
+            <span class="Form-label-text">Daughter</span>
+        </label>
+         <label class="Form-label--tick">
+            <input type="radio" value="F" name="SomeRadio" class="Form-label-radio" >
+            <span class="Form-label-text">Friend</span>
+        </label>
+         <label class="Form-label--tick">
+            <input type="radio" value="O" name="SomeRadio" class="Form-label-radio" >
+            <span class="Form-label-text">Other</span>
+        </label>
+       
+    </div>
+
+<div class="col-md-8 " >
+    <div class="row">
+<!-- <div *ngIf="ac=='null' && treat=='null'"> -->
+ <div class="form-group" style="padding-top:30px;">
+
+      <label for="select" class="col-md-8 control-label" style="font-size:20px;">Please select the emergency Situation?</label>
+      <div class="col-md-4">
+
+        <select class="form-control" id="select" >
+         
+            <option>Select</option>
+          <option>Accident</option>
+  <option>Natural Disaster</option>
+  <option>Strokes</option>
+  <option>Trauma</option>
+        </select>
+       
+      </div>
+
+    </div>
+    <!-- </div> -->
+
+
+</div>
+
+ </div>
+<!-- <div *ngIf="dis=='null' && treat=='null'"> -->
+<div class="col-md-8 ">
+    <div class="row">
+         <div class="form-group" style="padding-top:30px;">
+      <label  class="col-md-8 control-label " style="font-size:20px;">Please Provide your incident location?</label>
+      <div class="col-md-4">
+       
+        <select class="form-control" id="select" >
+           
+             <option>Select</option>
+          <option>banashankari</option>
+  <option>kumaraswamy layout</option>
+  <option>Koramangala</option>
+  
+        </select>
+       
+      </div>
+
+    </div>
+    </div>
+    
+</div>
+<!-- </div> -->
+<!-- <div *ngIf="dis =='null' && ac=='null'"> -->
+   <div class="col-md-8 ">
+    <div class="row">
+         <div class="form-group" style="padding-top:30px;">
+      <label for="select" class="col-md-8 control-label " style="font-size:20px;">What is the Emergency Condition?</label>
+      <div class="col-md-4">
+
+        <select class="form-control" id="select" >
+            <option>select</option>
+             <option>Critical</option>
+          <option>Very Critical</option>
+ 
+  
+        </select>
+       
+      </div>
+
+    </div>
+    </div>
+    
+</div> <!-- </div> -->
+   <div class="col-md-8 ">
+    <div class="row">
+         <div class="form-group" style="padding-top:30px;">
+      <label for="select" class="col-md-8 control-label " style="font-size:20px;">What you want?</label>
+
+      <div class="col-md-4">
+
+       
+
+   <select class="form-control" placeholder="help">
+            
+             <option>Select</option>
+          <option>Ambulance</option>
+  <option>Ambulance & Nurse</option>
+  <option>Doctor</option>
+  
+        </select> 
+       
+      </div>
+
+    </div>
+    </div>
+</div>
+
+
+
+ <div class="col-md-6 col-md-offset-3 ">
+    <div class="form-group"  style="padding-top:30px;">
+       <button type="button" class="btn"   style ="background-color: #47b2d8; color: #ffffff;"> Submit</button>
+     
+    </div>
+  </div>  
+<!-- <div>
+  
+    <div>
+        other
+           <form ng-show="showRelation" class="form-horizontal" id="selectrelation">
+       <div class="form-group">
+        <div class="col-md-12 col-xs-12 col-sm-12 col-lg-12">
+            <div class="" >
+            <h4 style="color: white">Chat on behalf of : </h4>
+                <label class="btn btn-default">
+                    <input type="radio" name="gender" value="father" (click)="emerFor()"/> Father
+                </label>
+                <label class="btn btn-default">
+                    <input type="radio" name="gender" value="mother" (click)="emerFor()"/> Mother
+                </label>
+                <label class="btn btn-default">
+                    <input type="radio" name="gender" value="wife" (click)="emerFor()"/> Wife
+                </label>
+                 <label class="btn btn-default">
+                    <input type="radio" name="gender" value="son" (click)="emerFor()"/> Son
+                </label>
+                 <label class="btn btn-default">
+                    <input type="radio" name="gender" value="Daughter" (click)="emerFor()"/> Daughter
+                </label>
+                 <label class="btn btn-default">
+                    <input type="radio" name="gender" value="friend" (click)="emerFor()"/> friend
+                </label>
+                <label class="btn btn-default">
+                    <input type="radio" name="gender" value="other" (click)="emerFor()"/> Others
+                </label>
+               
+            </div>
+        </div>
+    </div>
+        </form>
+</div>
+      <div *ngIf="emerForOthers">
+        <form class="search" method="post" action="index.html" ng-show="displayFields">
+         <span class="Form-title"><label>Please provide your the incident location</label></span>
+        <input type="text" name="q" placeholder="Search Location..." />
+        
+         <br><br>
+        <span class="Form-title"><label>What is the Emergency Condition?</label></span>
+        <input type="text" name="q" placeholder="Health Condition..." />
+        <br><br>
+        <span class="Form-title"><label>What you want?</label></span>
+        <input type="text" name="q" placeholder="Help.." />
+<br><br><br>
+        <div>
+            <button class="button button-3 button-3e icon-arrow-right"><i class="fa fa-arrow-right"></i>Submit</button>
+        </div>
+     </form>
+        </div>
+
+</div> -->

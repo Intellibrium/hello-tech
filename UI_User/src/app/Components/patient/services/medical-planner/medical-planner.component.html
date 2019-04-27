@@ -1,0 +1,42 @@
+
+
+
+
+
+<div class="container " style=" font-family:times new roman, Helvetica, sans-serif; font-size: 20px; text-align: center;">
+        <div class="row">
+
+            <div style="margin-top:1px;">
+              <h2 >Choose the medical event that you wish to plan</h2>
+              <hr/>
+              <div style="margin-top: 50px;">
+            <div class="col-sm-3">
+                <img src="/assets/images/vitamins.png " (click)="medIntake()">
+           <p (click)="medIntake()" style="margin-top:20px;" ><strong style="font-size:18px; margin-left:-15px;">Medicine Intake</strong></p>
+               
+               
+            </div>
+
+            <div class="col-sm-3">
+                  <img src="/assets/images/injection.png " (click)="vaccination()">
+              <p  (click)="vaccination()" style="margin-top:20px;">  <strong style="font-size:18px;">Vaccination</strong></p>
+                
+            </div>
+
+            <div class="col-sm-3">
+                  <img src="/assets/images/checkup.png " (click)="checkup()">
+              <p (click)="checkup()" style="margin-top:20px;">  <strong style="font-size:18px;">CheckUp </strong></p>
+                
+            </div>
+
+              <div class="col-sm-3">
+
+                <a class="btn icon-btn btn-info" [routerLink]="['/p/mpList']" style="margin-top:50px;"><span class="glyphicon btn-glyphicon glyphicon-folder-open img-circle text-info"></span><strong>MyPlans</strong></a>
+                
+               
+               
+            </div>
+        </div>
+        </div>
+    </div>
+  </div>

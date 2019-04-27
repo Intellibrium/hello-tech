@@ -1,0 +1,104 @@
+<div style=" font-family:times new roman, Helvetica, sans-serif; font-size: 20px; text-align: center;">
+<h2>Please search the experts. They will guide you in the right direction. 
+<br/>Please input either disease name, department name or symptoms :</h2>
+<hr/>
+   <b style=" font-size: 16px;">Disease Name: <input type="text" name="diseaseName">
+   &nbsp; <span style="color: #47b2d8;">OR/AND </span> Department Name: <input type="text" name="dipart">
+    &nbsp;<span style="color: #47b2d8;"> OR/AND </span> Symptom: <input type="text" name="symp">
+
+
+    <button class="btn" type="submit" style="background-color: #47b2d8; color: #ffffff;" (click)="expPanel()">Search Expert </button>
+
+</b>
+</div>
+
+<div *ngIf="searchQuery" style="margin-left: 20%; margin-right: 20%">
+    
+<hr/>
+<div class="container" style="margin-left: 13%">
+    
+    	<div class="row">
+			
+			<div class="col-md-6">
+				<div class="panel panel-success"  >
+					<div class="panel-heading" style=" background-color: #47b2d8; color: #ffffff;">
+						<h3 class="panel-title">Our expert doctors</h3>
+						<div class="pull-right">
+							
+						</div>
+					</div>
+					
+					<table class="table table-hover" id="task-table">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Doctor Name</th>
+								<th>Expertise</th>
+								<th>Qualification</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>1</td>
+								<td>Dr. Mahesh</td>
+								<td>****</td>
+								<td>****</td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Dr. Arun</td>
+								<td>****</td>
+								<td>****</td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Dr. Kavya</td>
+								<td>****</td>
+								<td>****</td>
+							</tr>
+							<tr>
+								<td>4</td>
+								<td>Dr. Rajesh</td>
+								<td>****</td>
+								<td>****</td>
+							</tr>
+							<tr>
+								<td>5</td>
+								<td>Dr. Amit</td>
+								<td>****</td>
+								<td>****</td>
+							</tr>
+							<tr>
+								<td>6</td>
+								<td>Dr. Imdad</td>
+								<td>****</td>
+								<td>****</td>
+							</tr>
+							<tr>
+								<td>7</td>
+								<td>Dr. Anju</td>
+								<td>****</td>
+								<td>****</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>Dr. Pallavi</td>
+								<td>****</td>
+								<td>****</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>Dr. Rahul</td>
+								<td>****</td>
+								<td>****</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<br/>
+  <button class="btn" type="submit" style="margin-left: 36%; background-color: #47b2d8; color: #ffffff;" (click)="proceed()">Ask Expert</button>
+</div>

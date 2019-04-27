@@ -1,0 +1,61 @@
+<div  style="text-align: center; font-family:times new roman, Helvetica, sans-serif; font-size: 20px;">
+     <section class="color-pattern-4">
+       <label>  <h2>   
+    Did you visit any doctor/clinic/hospital? For your medical symptoms:</h2>
+    </label></section>
+<div>
+<input type="radio" [(ngModel)]="doctorConsult" name="doctor" value="yes">Yes
+<input type="radio" [(ngModel)]="doctorConsult" name="doctor" value="No">No
+<div [ngSwitch]="doctorConsult">
+    <div *ngSwitchCase="'yes'"><hr/>
+       <div class=" " style="text-align: center; font-family:times new roman, Helvetica, sans-serif; font-size: 20px;" >
+        <span class="Form-title" style="margin-top: 10%"><label>Tell Us What Kind of medical Care You Took</label></span>
+             <div>
+            <div> <input type="radio" [(ngModel)]="doctorFrom"  name="doctor" value="doctor">Visited a Doctor</div>
+            <div> <input type="radio" [(ngModel)]="doctorFrom" name="doctor" value="clinic">Went to clinic</div>
+            <div> <input type="radio" [(ngModel)]="doctorFrom" name="doctor" value="hospital">Went to hospital </div>
+            
+            <div [ngSwitch]="doctorFrom">
+                <div *ngSwitchCase="'doctor'">
+                   <ae-doctor-form [subject]="cod"></ae-doctor-form>
+                </div>
+                <div *ngSwitchCase="'clinic'">
+                    <ae-clinic-form></ae-clinic-form>   
+                </div>
+                <div *ngSwitchCase="'hospital'">
+                
+                    <ae-hospital-form></ae-hospital-form>
+                    
+                </div>
+                
+
+            </div>
+        </div>
+        </div>
+    </div>
+    <div *ngSwitchCase="'No'">
+   
+         <ae-self-form></ae-self-form>
+    </div>
+</div>
+</div>
+        
+</div>
+<!-- <div>
+
+    <script>
+    function arr(){
+        console.log("rama");
+    }
+</script>
+
+    <button type="button"
+onclick="arr()">
+Click me to display Date and Time.</button>
+<p id="demo"></p>
+
+</div> -->
+
+<!-- <ae-doctor-form></ae-doctor-form> -->
+<!-- <ae-clinic-form></ae-clinic-form> -->
+<!-- <ae-hospital-form></ae-hospital-form> -->

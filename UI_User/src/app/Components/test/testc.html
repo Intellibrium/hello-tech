@@ -1,0 +1,61 @@
+<!-- <div>
+    child
+   parent  message to child : {{msgFromP}}
+</div>
+<div>
+    <input type="text" [(ngModel)]="response" (keyUp)="0">
+    {{response}}
+    <button (click)="reply($event)">send</button>
+</div> --> <p style="margin-left: 134px; margin-top: -55px; color: #779ec5; font-family:times new roman, Helvetica, sans-serif; font-size: 30px;">Doctor Profile</p>
+<div class="col-md-10">
+ <div class="mobile-frame" style="margin-top: -30px; margin-right: 150px;">
+  <div class="wrap">
+    <div class="col-md-10">
+       <div class="header">
+               <a href="Menu-section1.html">
+                    <div class="">
+                       <img  src="assets/images/logo.jpg" style="
+  
+  height:10%;
+  border-bottom:solid 2px #fff;
+ margin-left: 93px;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center;
+ 
+  float:left;
+  height: 50px;" />
+                    </div>
+                </a>
+                
+            </div>
+            
+    <div class="">
+       <img src="assets/images/Patient.jpg" class="avatar img-circle img-thumbnail" alt="avatar" style="height: 20%;width: 30%; margin-left: 120px;"><p style="margin-left: 110px;  color: #779ec5; font-family:times new roman, Helvetica, sans-serif; font-size: 19px; "> Pavan Kumar </p></div>
+
+<div>
+    <!-- child -->
+ <!-- Patient msg: {{mfp}} -->
+ 
+</div>
+<div *ngFor="let x of mc; let i=index">
+    <!-- array :  -->
+
+     {{x}}<br />
+    <a style="background-color:brown;">{{sendingDoctor[i]}}</a>
+   
+<br/>
+    <!-- {{sendingDoctor[i]}} <hr /> -->
+</div>
+
+<div>
+    <div class="doc">
+    <form [formGroup]="childMsg" >
+    <input type="text" formControlName="m0" (keyUp)="0" [(ngModel)]="sendingDoctor[count]">
+    <!-- {{response}} -->
+    <button (click)="replyP()">send</button>
+    </form>
+</div>
+</div>
+    </div></div></div>
+</div>

@@ -1,0 +1,56 @@
+<div class="" style="font-size:20px">
+Post Your Queries:{{subject}}  {{ram}}
+
+<div>
+  <span class="Form-label-text">FAQ</span> <input type="radio"  [(ngModel)]="subject" value="faq">
+ <span class="Form-label-text">Do's and Dont's</span> <input type="radio"  [(ngModel)]="subject" value="do">
+  <span class="Form-label-text">General Medical Advisory</span> <input type="radio"  [(ngModel)]="subject" value="med">
+  
+
+<hr>
+<div [ngSwitch]="subject">
+  <div *ngSwitchCase="'faq'">
+     Post Your FAQ..
+    <form>
+        <div class="col-xs-6 col-xs-offset-4 ">
+              <h3 style="text-align: left;color:white">Please fill the FAQ problem facing:</h3>
+          <br>
+        <textarea type="text" class="form-control box" name="name" ng-model="Addmore" placeholder="Post your Queries Here" style="width: 400px; height: 200px"></textarea><br>
+        <button ui-sref="p.faqform" type="button" class="btn btn-info btn-lg" value="Submit" onClick="Submit" align="center">submit</button>
+ 
+      </div>
+      </form>
+     
+      
+  </div>
+    <div *ngSwitchCase="'do'">
+       Post Your Do's and Dont's...
+      <form>
+       <div class="col-xs-6 col-xs-offset-4">
+       <h3 style="text-align: left;color:white">Please fill postDODONTS about the problem facing:</h3>
+          <br>
+       <textarea type="text" class="form-control box" name="name" ng-model="Addmore" placeholder="Post your Queries Here" style="width: 400px; height: 200px"></textarea><br>
+        <button ui-sref="p.faqform" type="button" class="btn btn-info btn-lg" value="Submit" onClick="Submit" align="center">submit</button>
+       </div>
+     </form>
+      
+      
+  </div>
+    <div *ngSwitchCase="'med'">
+     Post Your General medical Advisory...
+      <form>
+       <div class="col-xs-6 col-xs-offset-4">
+              <h3 style="text-align: left;color:white">Please fill Genereal Medical Advisories
+ about the problem facing:</h3>
+          <br>
+        <textarea type="text" class="form-control box" name="name" ng-model="Addmore" placeholder="Post your Queries Here" style="width: 400px; height: 200px"></textarea><br>
+        <button ui-sref="p.faqform" type="button" class="btn btn-info btn-lg" value="Submit" onClick="Submit" align="center">submit</button>
+ 
+      </div>
+     </form>
+  </div>
+
+</div>
+
+</div>
+</div>

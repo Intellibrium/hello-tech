@@ -1,0 +1,62 @@
+<div style="text-align: center; font-family:times new roman, Helvetica, sans-serif; font-size: 20px;">
+    <h3> Was any medicine admisted to you:</h3>
+    <br/>
+    <input type="radio" [(ngModel)]="treatmentByDoctor" value="yes">Yes
+    <input type="radio" [(ngModel)]="treatmentByDoctor" value="No">No
+<div [ngSwitch]="treatmentByDoctor">
+    <div *ngSwitchCase="'yes'">
+    <hr/>
+        <div class="form-group">
+
+            <div class="form-group" *ngFor="let sympForm of  chatMedFormGroup;let i=index">
+<form [formGroup]="sympForm" (ngSubmit)="saveSympToAE(sympForm.value)">
+    <div class="col-xs-12">
+    <div class="row">
+   
+  <div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">
+        Medicine Name <input type="text"  placeholder="medicine name {{i+1}}" [(ngModel)]="chatMedFormGroup[i].Medicine_Name"formControlName="Medicine_Name" class="form-control" placeholder="Symptom 1" style="width:100%;background-color: white;color:black; ">
+        </div>
+ <div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">
+    <div class="form-group">
+            From: <input id="date-birth" [(ngModel)]="chatMedFormGroup[i].From_Date" formControlName="From_Date" class="form-control" type="date" ng-model="dateBirth" style="width: 100%">     
+      </div>
+    </div>
+ <div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">
+            Till: <input id="date-birth" [(ngModel)]="chatMedFormGroup[i].To_Date" formControlName="To_Date" class="form-control" type="date" ng-model="dateBirth" style="width: 100%">  
+    </div>
+
+   </div>
+   </div>
+  <div> 
+  <!-- <button type="save" class="btn btn-primary pull-left">Save</button> -->
+</div>
+</form>
+</div>
+<div> 
+  <button type="submit" (click)="addMedReecords()"  class="btn btn-primary pull-left" style="margin-left: 10px;">add medicine</button>
+</div>
+<div> 
+  <button type="submit" (click)="saveTreatmentDetails()"  class="btn btn-primary pull-left" style="margin-left: 10px;">save</button>
+</div>
+
+<button [routerLink]="['../chatd']" class="btn btn-primary btn-info " style="margin-left:200px; position: fixed;">
+   Chat Directly 
+    </button>
+
+</div>
+    </div>
+    <div *ngSwitchCase="'No'">
+        <br/>
+        <button [routerLink]="['../chatd']" class="btn btn-primary btn-info " >
+  Next 
+    </button>
+    </div>
+
+</div>
+<button [routerLink]="['../chatd']" class="btn btn-primary btn-info " style="margin-left:200px; position: fixed;">
+   Chat Directly 
+    </button>
+
+</div>
+
+ 

@@ -1,0 +1,25 @@
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { DoctorPatientProfileComponent } from './doctor-patient-profile.component';
+
+describe('DoctorPatientProfileComponent', () => {
+  let component: DoctorPatientProfileComponent;
+  let fixture: ComponentFixture<DoctorPatientProfileComponent>;
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      declarations: [ DoctorPatientProfileComponent ]
+    })
+    .compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(DoctorPatientProfileComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

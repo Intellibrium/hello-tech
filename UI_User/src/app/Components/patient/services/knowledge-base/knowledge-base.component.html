@@ -1,0 +1,127 @@
+<div class="container">
+     <div class="col-md-12">        
+    <div class="row">
+<form [formGroup]="knowledgeBaseForm" (ngSubmit)="faq()">
+<h1 style="font-family: Georgia, serif; font-size:30px;">Welcome to the Knowledgebase Section...</h1>
+    <div class="testimonial-quote group">
+       
+        <div class="">
+           <!--  <blockquote> -->
+                <p style="font-family:normal; font-size:20px; font-style:bold;">"Enlighten your Knowledge on how to manage a medical problem or what needs to be done or not to be done  when you are suffering from particular disease. you can search for authentic  
+health related knowledge which can benefit you.”</p>
+            <!-- </blockquote>  --> 
+           
+        </div>
+    </div>    
+        
+   <hr>  
+
+   <div class="col-md-8 col-md-offset-3" >
+    <div class="row">
+
+<h2>Search the Knowledge base According to</h2>
+
+<!-- <div *ngIf="ac=='null' && treat=='null'"> -->
+ <div class="form-group" style="padding-top:30px;">
+
+      <label for="select" class="col-md-2 control-label" style="font-size:20px;">Disease</label>
+      <div class="col-md-6">
+
+        <select class="form-control" id="select" [(ngModel)]="dis" formControlName="disease">
+            <option></option>
+            <option>Select</option>
+          <option>HeadAche</option>
+  <option>Fever</option>
+  <option>Denque</option>
+  <option>Maleria</option>
+        </select>
+       
+      </div>
+
+    </div>
+    <!-- </div> -->
+
+
+</div>
+<p style="padding-top:10px; font-size:15px;"> and/or</p>
+ </div>
+<!-- <div *ngIf="dis=='null' && treat=='null'"> -->
+<div class="col-md-8 col-md-offset-3">
+    <div class="row">
+         <div class="form-group" style="padding-top:30px;">
+      <label for="select" class="col-md-2 control-label " style="font-size:20px;">Symptoms</label>
+      <div class="col-md-6">
+       
+        <select class="form-control" id="select" formControlName="symptoms">
+            <option></option>
+             <option>Select</option>
+          <option>Vomitting</option>
+  <option>Pain</option>
+  <option>nausea</option>
+  <option>anemic</option>
+        </select>
+       
+      </div>
+
+    </div>
+    </div>
+    <p style="padding-top:10px; font-size:15px;"> and/or</p>
+</div>
+<!-- </div> -->
+<!-- <div *ngIf="dis =='null' && ac=='null'"> -->
+   <div class="col-md-8 col-md-offset-3">
+    <div class="row">
+         <div class="form-group" style="padding-top:30px;">
+      <label for="select" class="col-md-2 control-label " style="font-size:20px;">Treatment</label>
+      <div class="col-md-6">
+
+        <select class="form-control" id="select" [(ngModel)]="treat" formControlName="treatment">
+            <option></option>
+             <option>Select</option>
+          <option>Surgery</option>
+  <option>Consultation</option>
+  <option>Meditation</option>
+  
+        </select>
+       
+      </div>
+
+    </div>
+    </div>
+    <p style="padding-top:10px; font-size:15px;"> and/or</p>
+</div> <!-- </div> -->
+   <div class="col-md-8 col-md-offset-3">
+    <div class="row">
+         <div class="form-group" style="padding-top:30px;">
+      <label for="select" class="col-md-2 control-label " style="font-size:20px;">Accident</label>
+      <div class="col-md-6">
+
+        <select class="form-control" id="select" formControlName="accident">
+            <option></option>
+             <option>Select</option>
+          <option>Electrical Injury</option>
+  <option>Vehicle Accident</option>
+  <option>Burn</option>
+  <option>Snake Bite</option>
+        </select>
+       
+      </div>
+
+    </div>
+    </div>
+</div>
+
+
+
+ <div class="col-md-6 col-md-offset-5 ">
+    <div class="form-group"  style="padding-top:30px;">
+       <button type="submit" class="btn"  style ="background-color: #47b2d8; color: #ffffff;"> Submit</button>
+     
+    </div>
+  </div>  
+   </form>
+    </div>
+</div>
+</div>
+  
+

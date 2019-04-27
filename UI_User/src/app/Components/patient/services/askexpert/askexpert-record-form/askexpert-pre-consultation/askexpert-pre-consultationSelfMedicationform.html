@@ -1,0 +1,52 @@
+<div>
+    <h2>
+        Did you take any medicine by your self:
+    </h2>
+    <div class="form-group">
+        Yes <input type="radio" [(ngModel)]="medBySelf" value="yes"> NO <input type="radio" (click)="saveRecordBySelf()"
+            value="no">
+        <div [ngSwitch]="medBySelf">
+            <div *ngSwitchCase="'yes'"> yes
+
+                <div class="form-group" *ngFor="let sympForm of  aeMedFormGroup;let i=index">
+                    <form [formGroup]="sympForm" (ngSubmit)="saveSympToAE(sympForm.value)">
+                        <div class="col-xs-12">
+                            <div class="row">
+
+                                <div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">
+                                    Medicine Name <input type="text" placeholder="medicine name {{i+1}}" [(ngModel)]="aeMedFormGroup[i].medicine_name"
+                                        formControlName="medicine_name" class="form-control" placeholder="Symptom 1" style="width:100%;background-color: white;color:black; ">
+                                </div>
+                                <div class="col-md-3 col-xs-3 col-lg-3 col-sm-3">
+                                    <div class="form-group">
+                                        timesADay: <input type="number" [(ngModel)]="aeMedFormGroup[i].timesADay" formControlName="timesADay"
+                                            class="form-control">
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <div>
+                            <!-- <button type="save" class="btn btn-primary pull-left">Save</button> -->
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <button type="submit" (click)="addMedReecords()" class="btn btn-primary pull-left" style="margin-left: 10px;">add medicine</button>
+                </div>
+                <div>
+                    <button type="submit" (click)="saveRecordBySelf()" class="btn btn-primary pull-left" style="margin-left: 10px;">save</button>
+                </div>
+
+            </div>
+
+
+            <div *ngSwitchCase="'no'">
+
+            </div>
+
+        </div>
+    </div>
+</div>

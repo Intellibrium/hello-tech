@@ -1,0 +1,76 @@
+<div class="row" style=" font-family:times new roman, Helvetica, sans-serif; font-size: 20px">
+  <div class="col-sm-10 col-md-offset-1">
+
+    <div id="form-container">
+     <div class="page-header text-center">
+        <h2>Ask Experts</h2>
+        <div >
+          <div >
+              <h3>
+                  We have  got panel of eminent and distinguish Doctors,
+who are working in renowned hospitals and who have a track record  of curing lakhs of patients worldwide.
+ <br/>
+Please fill in the medical problems & the step that you took for resolving them after filling the complete details
+our expert doctors will respond back in next 24 hours.
+
+                 <!-- Post your queries and fill all the forms, doctor will give an answer within 24hrs time.
+                 Give the complete details. -->
+             </h3>
+          </div>
+        </div>
+
+      </div>
+    <div>
+    <!-- <div><h2>Subject to Ask Expert</h2> -->
+      <!-- <input type="text" name="subject"> -->
+     <div class="" style="font-family:times new roman, Helvetica, sans-serif; text-align: center;">
+         <form [formGroup]="askExpertPatient" (ngSubmit)="savePatientDetails(askExpertPatient.value)">
+        <span class="Form-title"><label> For whom you want expert advice for :</label></span>
+       <br/>
+        <label class=""  >
+            <input type="radio" value="self" formControlName="patient" class="Form-label-radio" ng-click="displayFields = !displayFields">
+           YourSelf
+        </label><br/>
+        <label class="" >
+            <input type="radio" value="father" formControlName="patient" class="Form-label-radio" ng-click="displayFields = !displayFields">
+            <span class="   ">Father</span>
+        </label><br/>
+        <label class="">
+            <input type="radio" value="mother" formControlName="patient" class="Form-label-radio" ng-click="displayFields = !displayFields">
+            <span class="   ">Mother</span>
+        </label><br/>
+        <label class="">
+            <input type="radio" value="wife" formControlName="patient" class="Form-label-radio" ng-click="displayFields = !displayFields">
+            <span class="   ">Wife</span>
+        </label><br/>
+         <label class="">
+            <input type="radio" value="husband" formControlName="patient" class="Form-label-radio" ng-click="displayFields = !displayFields">
+            <span class="   ">Husband</span>
+        </label><br/>
+         <label class="">
+            <input type="radio" value="son" formControlName="patient" class="Form-label-radio" ng-click="displayFields = !displayFields">
+            <span class="   ">Son</span>
+        </label><br/>
+         <label class="">
+            <input type="radio" value="daughter" formControlName="patient" class="Form-label-radio" ng-click="displayFields = !displayFields">
+            <span class="   ">Daughter</span>
+        </label><br/>
+         <label class="">
+            <input type="radio" value="friend" formControlName="patient" class="Form-label-radio" ng-click="displayFields = !displayFields">
+            <span class="   ">Friend</span>
+        </label>
+         
+        <div *ngIf="askExpertPatient.controls['patient'].hasError('required') || askExpertPatient.controls['patient'].hasError('touched')" 
+        class="alert alert-warning" style=" width: 250px; margin-left: 390px;">
+           Please select the patient.
+        </div>
+         <div class="">
+ 
+    <button type="submit" class="btn btn-primary btn-info" [disabled]=!askExpertPatient.valid>
+    Give Details 
+    </button>
+</div>
+</form>
+</div>
+</div>
+    </div></div>

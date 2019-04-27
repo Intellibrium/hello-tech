@@ -1,0 +1,79 @@
+<div>
+    <form [formGroup]="soSymptomsForm" (ngSubmit)="submitSymp(soSymptomsForm.value)">
+<div class="form-group">
+<div class="col-xs-6 col-xs-offset-3">
+    <label for="select">Select Category</label>
+   <select class="form-control" formControlName="category">
+   <option></option>
+   <option>Fracture</option>
+   <option>Accident</option>
+   </select>
+   </div>
+</div>
+
+<div class="form-group">
+<div class="col-xs-6 col-md-6">
+    <label for="select">Symptom Name 1</label>
+   <select class="form-control" formControlName="symptom1">
+   <option></option>
+   <option>fever</option>
+   <option>malaria</option>
+   </select>
+   </div>
+</div>
+
+<div class="form-group">
+<div class="col-xs-6 col-md-6">
+    <label for="select" >Symptom Name 1.1</label>
+   <select class="form-control" formControlName="symptom2">
+   <option></option>
+   <option>Headache</option>
+   <option>dizziness</option>
+   </select>
+   </div>
+   </div>
+
+<div class="form-group">
+    <div class="row">
+      <div class="col-xs-6 col-md-6">
+            <label >From:</label>
+            <input  class="form-control" type="date" formControlName="durationFrom">
+      </div>
+            <div class="col-xs-6 col-md-6">
+                
+            <label    class="control-label">Till:</label>            
+                <input  class="form-control" type="date" formControlName="durationTill">
+            
+            </div>
+        </div>
+    </div>
+        
+<div class="form-group">
+<div class="col-xs-6 col-xs-offset-3">
+    <label for="Addmore">Add More:</label>
+    <br>
+<textarea type="text" class="form-control" name="name" formControlName="details" placeholder="Add More Details" style="width: 315px"></textarea>
+ 
+ <!-- <textarea id="Addmore" name="Addmore" placeholder="Add More Details" style="width: 250px"></textarea> -->
+</div>
+
+
+  </div>
+  <div class="col-xs-4 col-xs-offset-3">
+    <br><br>
+    <button type="submit"  class="btn btn-block btn-info">
+    Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </button>
+</div>
+    </form>
+</div>  
+   
+
+
+<div class="form-group row">
+
+
+</div>
+
+
+

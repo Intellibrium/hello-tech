@@ -1,0 +1,75 @@
+<!-- <label>Diagnosis</label> -->
+<div style=" font-family:times new roman, Helvetica, sans-serif; font-size: 20px; text-align: center;">
+   <h2> Did the Doctor write any lab test: </h2>
+    <input type="radio" [(ngModel)]="labTest" value="yes">Yes
+    &nbsp; &nbsp;<input type="radio" [(ngModel)]="labTest" value="No">No
+<div [ngSwitch]="labTest">
+    <div *ngSwitchCase="'yes'">
+        <hr/>
+        <div class="form-group">
+    <form [formGroup]="aeLabForm" (ngSubmit)="saveDiagnosisDetails(aeLabForm.value)">
+        <label for="name">Test Name:</label>
+        <input type="text" class="form-control" formControlName="testName" ng-model="formData.dname" style="width: 20%; margin-left: 40%;">
+              <div *ngIf="aeLabForm.controls['testName'].hasError('required') && aeLabForm.controls['testName'].touched" class="alert alert-warning ">
+         Test name required
+            </div>      
+        
+        <div class="form-group">
+
+            <label for="name">Observation:</label>
+            <input type="text" class="form-control" formControlName="observation" ng-model="formData.observation" style="width: 20%; margin-left: 40%;">
+        
+        </div>
+        <div class="form-group">
+
+            <div class="form-group">
+                <label for="date-birth" class="control-label">Date:</label>
+                <div class="control">
+                    <input id="date-birth" class="form-control" type="date" formControlName="date" ng-model="dateBirth" style="width: 15%; margin-left: 43%;">
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+
+            <label for="name">Upload Lab Report:</label>
+            <div ng-app="fileUpload" class="container">
+                <div class="">
+                    <input type="file" fileinput="file" formControlName="reports" filepreview="filepreview" style="width: 40%; margin-left: 40%;" />
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="form-group ">
+            <div class="container">
+                <br><br>
+                <button type="submit" class="btn   btn-block btn-info " style="font: 300 1.8rem 'Lato', Verdana, Helvetica, sans-serif;  margin-left: 38%; width: 25%">
+        Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                </button>
+            </div>
+        </div>
+    </form>
+   
+   
+
+    </div>
+    </div>
+    <div *ngSwitchCase="'No'">
+
+
+         <div class="col-md-9" style="width: 20%; margin-left: 40%">
+    <br><br>
+    <a (click)="saveDiagnosisDetails()" [routerLink]="['../aetreat']" class="btn btn-block btn-info">
+   skip <span class="glyphicon glyphicon-circle-arrow-right"></span>
+    </a>
+</div>
+    </div>
+    
+</div>
+<div>
+    
+</div>
+</div>

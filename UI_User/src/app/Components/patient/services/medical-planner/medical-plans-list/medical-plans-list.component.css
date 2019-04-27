@@ -1,0 +1,15 @@
+/*.table-sortable tbody tr {
+    cursor: move;
+}*/
+
+table{
+    font-family:'Calibri';
+    font-size:15px;
+    background-color:#fff;
+    color:#333;
+    
+}
+.modal-header{
+    background-color:#333;
+    color:#fff;
+}

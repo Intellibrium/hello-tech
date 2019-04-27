@@ -1,0 +1,78 @@
+<!-- <div ng-controller="faqform"> -->
+<div class="container-fluid">
+  
+
+  <h2 class="page-header">First Care - Patients Frequently Asked Questions</h2>
+<div class="row">
+ <div class="col-md-3 col-md-offset-4">
+    <form class="navbar-form navbar-right" method="GET">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search" name="ser" id="ser" ng-model="selected" uib-typeahead="s for s in ser | filter:$viewValue | limitTo:8">
+                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                        </div>
+                    </form><br><br><br><br><br><br>
+    </div> 
+    </div>
+
+    <div class="col-md-3 col-md-offset-2">
+      
+  <!-- <div ng-app="myVar"> -->
+        <div class="list-group panel"> 
+          <a ui-sref="p.faqform"><button class="list-group-item list-group-item-success" ng-click="toggle()" style="background-color: #f49741; width: 100%;">FAQ's</button></a><br>
+        <a (click)="readDos()"><button class="list-group-item list-group-item-success" style="background-color: #4CAF50; width: 100%;">Do's and Dont's</button></a><br>
+          <a (click)="readMedAdv()">
+            <button class="list-group-item list-group-item-success" style="background-color: #4CAF50; width: 100%;">
+              General Medical Advisories
+              </button>
+          </a> 
+        </div>
+        <a (click)="postQueries()">
+           <button class="list-group-item list-group-item-success" style="background-color:#80b733; width: 100%;">POST YOUR QUERY
+           </button>
+        </a>
+          </div>
+     <!--  </div> -->
+
+        <div class="form-group">
+          <div class="col-xs-4 col-xs-offset-1">
+            <label for="select">Select Category</label>
+              <select class="form-control">
+               <option></option>
+                <option>Fracture</option>
+                <option>Accident</option>
+              </select>
+          </div>
+        </div>
+     
+    <div class="form-group row">
+
+<div class="col-xs-4 col-xs-offset-1">
+    <br><br>
+    <a ui-sref="#" class="btn btn-info">
+    <!-- <span class="glyphicon glyphicon-search"></span> -->
+    Submit 
+    </a>
+</div>
+</div>
+ <div class="row">   
+<div class="col-md-8">
+        <h3>Frequently Asked Questions</h3><br>
+      <!--  <div custom-collapse ng-model="collapseData" collapse-panel-id="collapse-panel" collapse-panel-body-id="collapse-panel-body"></div> -->
+      <p><b>1. Why are you listing Doctors, if it is a walk in clinic/hospital?</b></p><br>
+      <p>We aim to be the one place where patients can find the right doctor. This is our primary goal and as the second step we help in making your visit happen with ease. If the doctor/clinic/hospital only has a walk-in facility, we help patients by providing the address and phone number.</p><br>
+      <p><b>2. Why are you listing Doctors, if it is a walk in clinic/hospital?</b></p><br>
+      <p>We aim to be the one place where patients can find the right doctor. This is our primary goal and as the second step we help in making your visit happen with ease. If the doctor/clinic/hospital only has a walk-in facility, we help patients by providing the address and phone number.</p><br>
+      <p><b>3. Why are you listing Doctors, if it is a walk in clinic/hospital?</b></p><br>
+      <p>We aim to be the one place where patients can find the right doctor. This is our primary goal and as the second step we help in making your visit happen with ease. If the doctor/clinic/hospital only has a walk-in facility, we help patients by providing the address and phone number.</p><br>
+     
+    </div>
+    <div clas="col-md-2 col-xs-offset-3">
+    <h4>Can’t find what you were looking for? Click the button below:</h4><br>
+    <button ui-sref="p.contactform" type="button" class="btn btn-warning" style="width:10%; height:5%">Contact Us</button>
+    </div>
+    </div>
+
+  </div>
+   
+
+<!-- </div> -->

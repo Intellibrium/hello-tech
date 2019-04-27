@@ -1,0 +1,110 @@
+<!-- <p>
+  medical-plans-list </p>
+  <table class="row-md-10">
+    <thead>EventName  Event-type</thead>
+     
+    <tr *ngFor="let plan of planList">
+      <td>{{plan.name}}</td>
+      <td>{{plan.type}}</td>
+      
+      <td><button>delete</button></td>
+      
+    </tr>
+  </table> -->
+
+
+
+
+<div class="container" style= "font-family : times new roman;">
+	<div class="row">
+
+		<h1 class="col-md-offset-3">Medical Plan List</h1>
+		<table class="table table-bordered table-hover table-responsive">
+		    <thead>
+		        <tr>
+		            <th>ID</th>
+		            <th>Event-Name</th>
+		            <th>Event-Type</th>
+		            
+		            <th>Edit</th>
+		            <th>Delete</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <tr id="d1">
+		            <td>1</td>
+		            <td id="f1">Medicine Intake</td>
+		            <td id="l1">Daily</td>
+		            
+		            <td><button type="button" data-toggle="modal" data-target="#edit" data-uid="1" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+		            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="1" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
+		        </tr>
+		        <tr id="d2">
+		            <td>2</td>
+		            <td id="f2">Medicine Intake</td>
+		            <td id="l2">Monthly</td>
+		            
+		            <td><button type="button" data-toggle="modal" data-target="#edit" data-uid="2" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+		            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="2" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
+		        </tr>
+
+		         <tr id="d2">
+		            <td>3</td>
+		            <td id="f3">Vaccination</td>
+		            <td id="l3">Monthly</td>
+		            
+		            <td><button type="button" data-toggle="modal" data-target="#edit" data-uid="2" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+		            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="2" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
+		        </tr>
+		         <tr id="d2">
+		            <td>4</td>
+		            <td id="f4">Checkup</td>
+		            <td id="l4">Daily</td>
+		            
+		            <td><button type="button" data-toggle="modal" data-target="#edit" data-uid="2" class="update btn btn-warning btn-sm"><span class="glyphicon glyphicon-pencil"></span></button></td>
+		            <td><button type="button" data-toggle="modal" data-target="#delete" data-uid="2" class="delete btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></button></td>
+		        </tr>
+		    </tbody>
+		</table>
+	</div>
+</div>
+<div id="edit" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title">Update Data</h4>
+      </div>
+      <div class="modal-body">
+           <input id="fn" type="text" class="form-control" name="fname" placeholder="Event-Name">
+           <input id="ln" type="text" class="form-control" name="fname" placeholder="Event-Type">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="up" class="btn btn-warning" data-dismiss="modal">Update</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="delete" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h4 class="modal-title">Delete Data</h4>
+      </div>
+      <div class="modal-body">
+        <strong>Are you sure you want to delete this data?</strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="del" class="btn btn-danger" data-dismiss="modal">Delete</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+	

@@ -1,0 +1,145 @@
+<div class="container col-md-4 col-lg-4 col-sm-6 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4">
+    <div class="login-page">
+        <div class="form-content">
+            <div role="form" class="form-horizontal " name="frm">
+                <div class="row ">
+                    <div class="panel panel-success">
+                        <div class="panel-heading" style="background-color: #a3cfe4;">
+
+
+                            <h2 class="cust-label w1Center">Registration</h2>
+                            <hr/>
+
+                            <form [formGroup]="userForm" (submit)="saveUser()">
+
+                                <div class="form-group">
+                                    <label for="name" class="col-md-2 col-md-offset-1 control-label cust-label w1Center">First Name</label>
+                                    <div class="col-md-6">
+                                        <input formControlName="name" id="name" name="name" class="form-control" />
+                                        <control-messages [control]="userForm.controls.name"></control-messages>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="lname" class="col-md-2 col-md-offset-1 control-label cust-label w1Center">Last Name</label>
+                                    <div class="col-md-6">
+                                        <input formControlName="lname" id="lname" class="form-control" />
+                                        <control-messages [control]="userForm.controls.lname"></control-messages>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="gender" class="col-md-2 col-md-offset-1 control-label cust-label w1Center">Gender</label>
+                                    <div class="col-md-6">
+
+                                        <label style="color: white">
+                                            <input type="radio" formControlName="gender" value="Male" checked="checked" /> Male</label>
+                                        <label style="color: white;margin-left: 20%">
+                                            <input type="radio" formControlName="gender" value="Female" />Female</label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="DOb" class="col-md-2 col-md-offset-1 control-label cust-label w1Center">DOB</label>
+                                    <div class="col-md-6">
+                                        <input type="date" formControlName="DOB" id="DOB" class="form-control" [max]="today" />
+                                        <control-messages [control]="userForm.controls.DOB"></control-messages>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email" class="col-md-2 col-md-offset-1 control-label cust-label w1Center">Email</label>
+                                    <div class="col-md-6">
+                                        <input type="email" formControlName="email" id="email" class="form-control" />
+                                        <control-messages [control]="userForm.controls.email"></control-messages>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="mobile" class="col-md-2 col-md-offset-1 control-label cust-label w1Center">Phone No</label>
+                                    <div class="col-md-6">
+                                        <input type="text" formControlName="mobile" id="mobile" class="form-control" pattern="^[0-9]*\S" maxlength="10" />
+                                        <control-messages [control]="userForm.controls.mobile"></control-messages>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="mobile" class="col-md-2 col-md-offset-1 control-label cust-label w1Center">Primary city</label>
+                                    <div class="col-md-6">
+                                        <input type="text" formControlName="primaryCity" id="primaryCity" class="form-control" minlength="4" />
+                                        <control-messages [control]="userForm.controls.primaryCity"></control-messages>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mobile" class="col-md-2 col-md-offset-1 control-label cust-label w1Center">Pin code</label>
+                                    <div class="col-md-6">
+                                        <input type="text" formControlName="pinCode" id="pinCode" class="form-control" minlength="6" maxlength="6" />
+                                        <control-messages [control]="userForm.controls.pinCode"></control-messages>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="blood" class="col-md-2 col-md-offset-1 control-label cust-label w1Center">Blood Group</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" formControlName="blood" required="">
+                                            <option>Choose Blood Group </option>
+                                            <option>A+</option>
+                                            <option>A-</option>
+                                            <option>AB+</option>
+                                            <option>AB-</option>
+                                            <option>O+</option>
+                                            <option>O-</option>
+                                            <control-messages [control]="userForm.controls.lood"></control-messages>
+                                        </select>
+
+
+
+                                    </div>
+                                </div>
+
+
+                                <button type="submit" class="btn btn-primary col-md-offset-5 col-lg-offset-5 col-xs-offset-5 col-sm-offset-5" data-toggle="modal"
+                                    data-target="#basicModal" [disabled]="!userForm.valid">Submit</button>
+                            </form>
+
+
+                            <div class="modal fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+                                <div class="modal-dialog modal-md">
+                                    <div class="modal-content">
+
+ 
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title" style="color: hsl(217, 89%, 73%);text-align: center" id="myModalLabel">Enter your O.T.P</h4>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            <div class="panel-body">
+                                                <div class="col-md-6 col-md-offset-3">
+                                                    <input type="number" class="form-control" name="" placeholder="Enter O.T.P here" required [(ngModel)]="otp" maxlength="5">
+                                                    <br>
+                                                </div>
+
+                                                <div class="col-md-6 col-md-offset-4">
+                                                    <button type="submit" class="btn btn-primary" aria-hidden="true" data-dismiss="modal" (click)="close()">OK</button>
+                                                    <!-- data-dismiss="modal"  -->
+
+
+                                                    <button type="button" class="btn btn-primary " aria-hidden="true" (click)="send()">Resend O.T.P</button>
+
+                                                    <p style="color: {{col}}"> Status: {{sent}} </p>
+                                                    <span>{{reenter}}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

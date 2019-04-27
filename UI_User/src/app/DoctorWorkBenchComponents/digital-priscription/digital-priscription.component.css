@@ -1,0 +1,37 @@
+.navbar-inverse {
+    background-color: #1572c1;
+    border-color: #d9edf7;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #f2dede;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #f2dede;
+}
+
+@media (min-width: 1200px){
+.container {
+    width: 1170px;
+    margin-left: 0px;
+}
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 19px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+
+.row {
+    margin-right: -40px;
+    margin-left: -15px;
+}
+
+.panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #d08787;
+    border-color: #337ab7;
+}

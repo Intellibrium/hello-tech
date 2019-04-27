@@ -1,0 +1,293 @@
+<div class=" imges col-md-12 col-xs-12 col-lg-12 col-sm-12">
+<div>
+  <h2 style="text-align: center;font-family:times new roman, Helvetica, sans-serif;font-size: 60px;color:#1540e4;box-shadow: -4px 5px 6px 1px black;">First Care <p style="font-size: 20px;">All in <b>1 </b> place <b> 1 </b> click</p>  </h2> 
+ </div>
+  <div class="container col-lg-4 col-md-4 col-sm-6 col-xs-12 col-lg-offset-4 col-md-offset-4 col-sm-offset-4" style="width: 40%;height: 30%">
+    <div class="row">
+      <div class="panel panel-success">
+        <div class="panel-heading" style="background-color:#7baaf7;">
+        <strong ><h4 style="color:white;text-align: center">Do You Want Add Family Or Friend</h4></strong>
+        
+         <div class="col-md-2 col-md-offset-4">
+              <div class="radio">
+                    <label>
+                    <input [(ngModel)]="options" type="radio" [value]="true" [checked]="options" value="yes" checked="" style="color:#7baaf7">
+                  Yes
+                    </label>
+              </div>
+            </div>
+             <div class="col-md-4 col-md-offset-1">
+              <div class="radio">
+                <label>
+                  <input [(ngModel)]="options" type="radio" [value]="false" [checked]="!options" value="no" style="color:#7baaf7" routerLink="../home" (click)="Alrt()">
+                  No
+                </label>
+              </div>
+            </div>
+
+<div>
+ <label class="" style="color: white;margin-left: 25%"><h2>Add Family And Friends</h2></label> <hr/>
+</div>
+<div class="form-group" *ngIf="options">
+            <div class="row">
+                <label class="col-md-3 control-label cust-label w1Center">Choose Member Type</label>
+
+                <div class="col-md-6">
+
+                  <select class="form-control" id="select">
+                  <option>Choose Member</option>
+                  <option>Family</option>
+                  <option>Friend</option>
+                  <option>Others</option>
+                </select>
+
+         
+
+                </div>
+                </div><br>
+
+
+                <div class="row">
+                <label class="col-md-3 control-label cust-label w1Center">Name</label>
+
+                <div class="col-md-6">
+
+                  <input type="text"  class="form-control"  placeholder="Enter Member Name" />
+          
+                </div>
+                </div><br>
+
+                  <div class="row">
+                <label class="col-md-3 control-label cust-label w1Center">Relation</label>
+
+                <div class="col-md-6">
+
+                  <input type="text"  class="form-control" placeholder="Enter Your Relation" />
+          
+                </div>
+                </div><br>
+
+                  <div class="row">
+                <label class="col-md-3 control-label cust-label w1Center" >Phone No</label>
+
+                <div class="col-md-6">
+
+                  <input type="text"  class="form-control"  placeholder="Enter Phone No" />
+          
+                </div>
+                </div><br>
+
+                  <div class="row">
+                <label class="col-md-3 control-label cust-label w1Center">D.O.B</label>
+
+                <div class="col-md-6">
+                                    <input type="date" data-date-inline-picker="true" class="form-control" />
+                                  </div>
+                </div><br>
+
+
+                  <div class="row">
+                <label class="col-md-3 control-label cust-label w1Center">Blood Group</label>
+
+                <div class="col-md-6">
+
+                                   <select class="form-control" id="select">
+                                      <option>Choose Blood Type</option>
+                                      <option>A+</option>
+                                      <option>A-</option>
+                                      <option>B+</option>
+                                      <option>B-</option>
+                                      <option>AB+</option>
+                                      <option>AB-</option>
+                                      <option>O+</option>
+                                      <option>O-</option>
+                                    </select>
+
+                                  </div>
+                </div><br>
+
+                  <div class="row">
+                <label class="col-md-3 control-label cust-label w1Center">Gender</label>
+
+                <div class="col-md-2">
+                              <div class="radio">
+                                    <label>
+                                    <input type="radio" name="gender" id="gender" value="Male" checked="" style="color:#7baaf7">
+                                  Male
+                                    </label>
+                              </div>
+                            </div>
+
+                             <div class="col-md-4 col-md-offset-1">
+                              <div class="radio">
+                                <label>
+                                  <input type="radio" name="gender" id="gender" value="Female" style="color:#7baaf7">
+                                  Female
+                                </label>
+                              </div>
+                            </div>
+                </div><br>
+
+
+
+                
+
+                <button class="btn btn-warning w1Center pull-right" data-toggle="modal" data-target="#largeModal">Add More Members</button>
+                <button type="button" class="btn btn-primary col-md-offset-4" routerLink="../p/h" (click)="Alrt()">submit</button>
+                                <button type="button" class="btn btn-primary " routerLink="../p/h" (click)="Alrt()" >Skip</button>
+
+
+                <div id="largeModal" class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog">
+                  <div class="modal-dialog modal-md">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title w1Center" style="color:#7baaf7">Fill The Details</h4>
+                      </div>
+                      <div class="modal-body">
+                        <div class="panel-body">
+                          <form role="form">
+                            <div class="row">
+                              <div class="col-md-6 col-md-6">
+                                <div class="form-group">
+                                  <label  class="col-md-4 control-label cust-label w1Center" style="color:#7baaf7">Name</label>
+                                  <div class="col-md-8">
+                                    <input type="text" class="form-control" id="rname" required placeholder="Name">
+                                  
+                              </div>
+                                </div>
+                              </div>
+
+
+                              <div class="col-md-6 col-md-6 ">
+                                <div class="form-group">
+                                  <label class="col-md-3 control-label cust-label w1Center" style="color:#7baaf7">Member Type</label>
+
+                                  <div class="col-md-8">
+
+                                      <select class="form-control" id="select">
+                                      <option>Choose Member</option>
+                                      <option>Family</option>
+                                      <option>Freiend</option>
+                                      <option>Others</option>
+                                    </select>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="row">
+                             <div class="col-md-6 col-md-6">
+                            <div class="form-group">
+                                    <label  class="col-md-4 control-label cust-label w1Center" style="color:#7baaf7">Phone No</label>
+                              <div class="col-md-8">
+                                
+                                    <input type='text' id="phone3" class="form-control"  clean="true" />
+                              
+                              </div>
+                            </div>
+                            </div>
+                            <div class="col-md-6 col-md-6">
+                                <div class="form-group">
+                                  <label  class="col-md-3 control-label cust-label w1Center" style="color:#7baaf7">Height</label>
+                                  <div class="col-md-8">
+                                    <input type="text" class="form-control" id="rname" required placeholder="in Inch">
+                                  
+                              </div>
+                                </div>
+                              </div>
+
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6 col-md-6">
+                                <div class="form-group">
+                                  <label  class="col-md-4 control-label cust-label w1Center" style="color:#7baaf7">D.O.B</label>
+                                  <div class="col-md-8">
+                                    <input type="date" data-date-inline-picker="true" class="form-control" />
+                                  </div>
+                                </div>
+                              </div>
+
+                              
+                              <div class="col-md-6 col-md-6">
+                                <div class="form-group">
+                                  <label  class="col-md-3 control-label cust-label w1Center" style="color:#7baaf7">weight</label>
+                                  <div class="col-md-8">
+                                    <input type="text" class="form-control" id="rname" required placeholder="in Kg">
+                                  
+                              </div>
+                                </div>
+                              </div>
+
+                             
+                            </div>
+                            
+                            <div class="row">
+                            <div class="col-md-6 col-md-6 ">
+                           <div class="form-group">
+                                  <label class="col-md-4 control-label cust-label w1Center" style="color:#7baaf7">Gender</label>
+                            <div class="col-md-2">
+                              <div class="radio">
+                                    <label>
+                                    <input type="radio" name="gender" id="gender" value="Male" checked="" style="color:#7baaf7">
+                                  Male
+                                    </label>
+                              </div>
+                            </div>
+                             <div class="col-md-4 col-md-offset-1">
+                              <div class="radio">
+                                <label>
+                                  <input type="radio" name="gender" id="gender" value="Female" style="color:#7baaf7">
+                                  Female
+                                </label>
+                              </div>
+                            </div>
+                          </div>
+                          </div>
+
+                           <div class="col-md-6 col-md-6 ">
+                                <div class="form-group">
+                                  <label  class="col-md-3 control-label cust-label w1Center" style="color:#7baaf7">Blood Group</label>
+                                  <div class="col-md-8">
+
+                                     <select class="form-control" id="select">
+                                      <option>Choose Blood Type</option>
+                                      <option>A+</option>
+                                      <option>A-</option>
+                                      <option>B+</option>
+                                      <option>B-</option>
+                                      <option>AB+</option>
+                                      <option>AB-</option>
+                                      <option>O+</option>
+                                      <option>O-</option>
+                                    </select>
+
+                                  </div>
+
+                                </div>
+                              </div>
+
+                          </div>
+
+
+
+                          </form>
+                        </div>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-danger w1Center col-md-offset-2" data-dismiss="modal" >Cancel</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">save</button>
+
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>
+              </div>

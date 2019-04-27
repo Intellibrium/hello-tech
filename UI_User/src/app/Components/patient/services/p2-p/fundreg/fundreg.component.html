@@ -1,0 +1,300 @@
+<div class="container" style=" font-family:times new roman, Helvetica, sans-serif; font-size: 20px; text-align: center;">
+    <h3 class="well" style="background-color:#47b2d8;">Registration Form</h3>
+  <div class="col-lg-12 well" style="background-color: white">
+  <div class="row">
+        <form [formGroup]="myForm" (ngSubmit)="reg()">
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label>First Name</label>
+                 <span class="asterisk_input"></span>
+                 <input type="text" name="name" class="form-control" id="name" placeholder="Enter first Name here" formControlName="name" required>
+               <div *ngIf="myForm.controls['name'].hasError('required') &&myForm.controls['name'].touched" style="color:red" >!First Name required</div>
+
+               
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>Last Name</label>
+                <input type="text" placeholder="Enter Last Name Here.." class="form-control">
+              </div>
+            </div> 
+            <div class="row">
+              <div class="col-sm-4 form-group">
+                <label>DOB</label>
+                <input type="text" placeholder="Enter dob Here.." id="date" class="form-control">
+              </div> 
+
+               <div class="col-sm-4 form-group" style="padding-top: 27px;">
+                <label>Gender</label>
+              <label class="radio-inline">
+                 <input type="radio" name="optradio">Male
+               </label>
+               <label class="radio-inline">
+               <input type="radio" name="optradio">Female
+    </label>
+   
+ 
+              </div>
+
+              <div class="col-sm-4 form-group">
+                <label>Blood Group</label>
+                 <span class="asterisk_input"></span>
+                <select class="form-control" formControlName="bg" >
+                  <option>Select Blood Group</option>
+            
+                  <option>B+ve</option>
+                  <option>0+ve</option>
+                  <option>AB+ve</option>
+                </select>
+                <div *ngIf="myForm.controls['bg'].hasError('required') &&myForm.controls['bg'].touched" style="color:red" >!Blood Group required</div>
+              
+              </div>    
+            </div> 
+
+            
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label>Mobile Number</label>
+                 <span class="asterisk_input"></span>
+                  <input type="text" name="phno" class="form-control" id="phno" placeholder="Enter Mobile Number Here" formControlName="phno" maxlength="10"  required>
+               <div *ngIf="myForm.controls['phno'].hasError('required') &&myForm.controls['phno'].touched" style="color:red" >!Mobile Number required</div>
+                <div *ngIf="myForm.controls['phno'].hasError('maxlength')" style="color:red">max 10 numbers
+                          </div>
+
+            <div *ngIf="myForm.controls['phno'].hasError('minlength')" style="color: red;">min 10 numbers
+                 </div> 
+
+
+                <div *ngIf="myForm.controls['phno'].hasError('pattern')"
+                style="color:red">Enter only number
+                </div>
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>Alternative Mobile Number</label>
+                <input type="Number" placeholder="Enter Alternative Mobile Number Here.." class="form-control">
+              </div>
+            </div> 
+          
+
+             <div class="form-group">
+            <label>Patient Name/Patient Id</label>
+             <span class="asterisk_input"></span>
+          
+          <input type="text" name="pid" class="form-control" id="pid" placeholder="Enter patientName/id" formControlName="pid" required>
+               <div *ngIf="myForm.controls['pid'].hasError('required') &&myForm.controls['pid'].touched" style="color:red" >!PatientId/Name required</div>
+          </div>        
+            
+            <div class="row">
+              <div class="col-sm-4 form-group">
+                <label>City</label>
+                 <span class="asterisk_input"></span>
+                 <input type="text" name="cy" class="form-control" id="cy" placeholder="Enter city Name" formControlName="cy" required>
+               <div *ngIf="myForm.controls['cy'].hasError('required') &&myForm.controls['cy'].touched" style="color:red" >!City required</div>
+               
+              
+              </div>  
+              <div class="col-sm-4 form-group">
+                <label>State</label>
+                <span class="asterisk_input"></span>
+                <select class="form-control" >
+                  <option>Select State</option>
+            
+                  <option>Bangaluru</option>
+                  <option>Mumbai</option>
+                  <option>Delhi</option>
+                  <option>Andra</option>
+                </select>
+                  </div>
+
+                
+             
+              <div class="col-sm-4 form-group">
+                <label>Pin</label>
+                 <span class="asterisk_input"></span>
+                   <input type="text" name="pin" class="form-control" id="pin" placeholder="Enter Pin Here" formControlName="pin" maxlength="6" required>
+               <div *ngIf="myForm.controls['pin'].hasError('required') &&myForm.controls['pin'].touched" style="color:red" >!Pin required</div>
+              <div *ngIf="myForm.controls['pin'].hasError('maxlength')" style="color:red">
+                max 6 numbers</div>
+                <div *ngIf="myForm.controls['pin'].hasError('minlength')" style="color: red;">min 6 numbers
+                 </div> 
+                  <div *ngIf="myForm.controls['pin'].hasError('pattern')"
+                style="color:red">Enter only number
+                </div>
+              </div>
+              
+            </div> 
+            <div class="form-group">
+              <label>Address</label>
+               <span class="asterisk_input"></span>
+                   <textarea placeholder="Enter Address Here.." rows="3" class="form-control"></textarea> 
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <h3 class="asterisk_input">For Whom Do You Need Funds??</h3>
+              
+              </div>  
+
+            </div>
+            <div class="row well" style="background-color: white" >
+              <div class="col-md-12">
+                <label class="radio-inline" style="padding-left: 0px;">
+                 <input type="radio" name="optradio">Myself
+               </label>
+              <label class="radio-inline" style="padding-left: 10px;">
+                 <input type="radio" name="optradio">Father
+               </label>
+                <label class="radio-inline"  style="padding-left: 10px;">
+                 <input type="radio" name="optradio">Mother
+               </label>
+                <label class="radio-inline"  style="padding-left: 10px;">
+                 <input type="radio" name="optradio">Brother
+               </label>
+                <label class="radio-inline"  style="padding-left: 10px;">
+                 <input type="radio" name="optradio">Sister
+               </label>
+               <label class="radio-inline"  style="padding-left: 10px;">
+                 <input type="radio" name="optradio">Husband
+               </label>
+                <label class="radio-inline"  style="padding-left: 10px;">
+                 <input type="radio" name="optradio">Wife
+               </label>
+                <label class="radio-inline"  style="padding-left: 10px;">
+                 <input type="radio" name="optradio">Friends
+               </label>
+                <label class="radio-inline"  style="padding-left: 10px;">
+                 <input type="radio" name="optradio">Others
+               </label>
+            </div>
+            </div>             
+            
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label>Annual/Monthly income</label>
+                 <span class="asterisk_input"></span>
+                 <input type="Number" name="a" class="form-control" id="a" placeholder="Enter Income Here" formControlName="a" required>
+               <div *ngIf="myForm.controls['a'].hasError('required') &&myForm.controls['a'].touched" style="color:red" >!Income required
+               </div>
+
+
+
+                 
+               
+              </div>
+              <div class="col-sm-6 form-group">
+                <label>Pan Number</label>
+                 <span class="asterisk_input"></span>
+                 <input type="number" name="pan" class="form-control" id="pan" placeholder="Enter Pan Here" formControlName="pan" required>
+               <div *ngIf="myForm.controls['pan'].hasError('required') &&myForm.controls['pan'].touched" style="color:red" >!Pan required</div>
+                
+                
+              </div>
+            </div>  
+            
+          <div class="form-group">
+            <label>Email Address</label>
+            <span class="asterisk_input"></span>
+             <input type="email" name="email" class="form-control" id="email" placeholder="Enter email here" formControlName="email" required>
+               <div *ngIf="myForm.controls['email'].hasError('required') || myForm.controls['email'].hasError('pattern')" style="color:red" >!email required </div>
+          </div>
+           <div class="row">
+              <div class="col-sm-6 form-group">
+                <label>Upload Bank Statement</label>
+                 <span class="asterisk_input"></span>
+               
+               <input type="file" name="b" class="form-control" id="b" placeholder="Upload Here" formControlName="b" required>
+               <div *ngIf="myForm.controls['b'].hasError('required') &&myForm.controls['b'].touched" style="color:red" >!statement required  
+              </div>
+            </div>
+              <div class="col-sm-6 form-group">
+                <label>Income Certificate</label>
+                 <span class="asterisk_input"></span>
+                 <input type="file" name="c" class="form-control" id="c" placeholder="Upload Here" formControlName="c" required>
+               <div *ngIf="myForm.controls['c'].hasError('required') &&myForm.controls['c'].touched" style="color:red" >!Income required
+              </div>    
+                
+              </div>
+            </div>  
+            <h4>Finicial Status of Family</h4>
+            <div class="row">
+              <div class="col-sm-4 form-group">
+                <label>Realation With Patient</label>
+                 <span class="asterisk_input"></span>
+                <select class="form-control" >
+                  <option>Select Relation</option>
+            
+                  <option>Father</option>
+                  <option>Mother</option>
+                  <option>Sister</option>
+                  <option>Brother</option>
+                  <option>Husband</option>
+                  <option>Wife</option>
+                </select>
+              </div>  
+              <div class="col-sm-4 form-group">
+                <label>Person Name</label>
+                 <span class="asterisk_input"></span>
+                 <input type="text" name="pn" class="form-control" id="pn" placeholder="Enter name Here" formControlName="pn" required>
+               <div *ngIf="myForm.controls['pn'].hasError('required') &&myForm.controls['pn'].touched" style="color:red" >!FirstName required
+              </div>  
+               
+              </div>
+
+              <div class="col-sm-4 form-group">
+                <label>Upload Income Certificate</label>
+                 <span class="asterisk_input"></span>
+                 <input type="file" name="uc" class="form-control" id="uc" placeholder="Upload Here" formControlName="uc" required>
+               <div *ngIf="myForm.controls['uc'].hasError('required') &&myForm.controls['uc'].touched" style="color:red" >!Income required
+              </div>  
+                
+            </div>    
+            </div>
+            <div class="row">
+              <div class="col-sm-4 form-group">
+                <label>Realation With Patient</label>
+                 <span class="asterisk_input"></span>
+                <select class="form-control" >
+                  <option>Select Relation</option>
+            
+                  <option>Father</option>
+                  <option>Mother</option>
+                  <option>Sister</option>
+                  <option>Brother</option>
+                  <option>Husband</option>
+                  <option>Wife</option>
+                </select>
+              </div>  
+              <div class="col-sm-4 form-group">
+                <label>Person Name 2</label>
+                 <span class="asterisk_input"></span>
+                 <input type="text" name="p2" class="form-control" id="p2" placeholder="Enter name Here" formControlName="p2" required>
+               <div *ngIf="myForm.controls['p2'].hasError('required') &&myForm.controls['p2'].touched" style="color:red" >!FirstName required
+              </div> 
+               <!--  <input type="text" placeholder="Enter First Name Here.." class="form-control"> -->
+              </div>
+
+              <div class="col-sm-4 form-group">
+                <label>Upload Income Certificate</label>
+                 <span class="asterisk_input"></span>
+                <input type="file" name="uic" class="form-control" id="uic" placeholder="Upload Here" formControlName="uic" required>
+               <div *ngIf="myForm.controls['uic'].hasError('required') &&myForm.controls['uic'].touched" style="color:red" >!Income required
+              </div>
+              </div>    
+            </div>
+            <div class="form-group">
+            <label>Upload Persecption</label>
+             <span class="asterisk_input"></span>
+            <input type="file" placeholder="Upload" class="form-control">
+
+          </div> 
+           <br>
+          <div class="col-md-12 col-md-offset-5">
+          <button type="Submit" [disabled]="!myForm.valid" class="btn btn-lg btn-info"
+           >Submit</button> 
+
+          </div>
+        </div>
+        </form> 
+        </div>
+      </div>
+    </div>
+    

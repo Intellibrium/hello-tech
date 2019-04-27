@@ -1,0 +1,291 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+.mobile-frame {
+  width: 390px;
+  height: 655px;
+  margin: 10px auto 0;
+  padding: 0;
+  
+  background: url('http://i60.tinypic.com/nxvrea.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: 20% center;  
+}
+
+.wrap {
+  width: 320px;
+  height: 568px;
+  margin: 0 auto 0;
+  padding: 10px;
+  
+  position: relative;
+  top: 115px;
+  
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+
+
+
+
+/* ************ YOUR CONTENT HERE ************ */
+
+ul {
+  margin: 0 0 10px;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  padding-left: 10px;
+
+  font-size: 11px;  
+  line-height: 12px;
+  text-align: center;
+  vertical-align: middle;
+  text-transform: uppercase;
+  
+  &:first-child {
+    padding-left: 0;
+  }
+}
+
+a {
+  color: orange;
+  text-decoration: none;
+}
+
+
+
+/*inside*/
+.menu_buttons_wrap {
+    width: 100%;
+    margin-top: 3%;
+    background-color: #FFF;
+    float: left;
+    height: 70px;
+}
+.menu_buttons
+{
+  background-color:#fff;
+  height:80%;
+  width:22.5%;
+  margin-left:8%;
+  float:left;
+  margin-top:-2%
+}
+.menu_icons
+{
+  width:100%;
+  text-align:center;
+  height:65%;
+}
+.menu_icons1
+{
+  width:100%;
+  text-align:center;
+  height:100%;
+  background-image:url(/assets/images/user.jpg);
+  background-size:cover;
+  height:50px;
+  width:50px;
+  margin-left: -10px;
+}
+
+
+.menu_button_label
+{
+  position:absolute;
+  margin-top:1px;
+  margin-left:-15px;
+  color:#3C3C3C;
+  
+}
+
+.menu_button_label2
+{
+  position:absolute;
+  margin-top:1px;
+  margin-left:30px;
+  color:#3C3C3C;
+  
+}
+.menu_icons2
+{
+  
+  width:100%;
+  text-align:center;
+  height:100%;
+  background-image:url(/assets/images/faq.jpg);
+  background-size:cover;
+  height:50px;
+  width:50px;
+  margin-left: -5px;
+
+}
+
+.menu_icons3
+{
+  
+  width:100%;
+  text-align:center;
+  height:100%;
+  margin-left: 11px;
+  background-image:url(/assets/images/emer.png);
+  background-size:cover;
+  height:50px;
+  width:50px;
+}
+
+.menu_button_label3
+{
+  position:absolute;
+  margin-top:1px;
+  margin-left:-1px;
+  color:#3C3C3C;
+  
+}
+
+/*second*/
+.menu_icons12
+{
+  width:100%;
+  text-align:center;
+  height:100%;
+  background-image:url(/assets/images/chat.png);
+  background-size:cover;
+  height:50px;
+  width:50px;
+  margin-left: -10px;
+}
+
+
+.menu_button_label2
+{
+  position:absolute;
+  margin-top:1px;
+  margin-left:-15px;
+  color:#3C3C3C;
+  
+}
+
+.menu_button_label21
+{
+  position:absolute;
+  margin-top:1px;
+  margin-left:-20px;
+  color:#3C3C3C;
+  
+}
+.menu_icons21
+{
+  
+  width:100%;
+  text-align:center;
+  height:100%;
+  background-image:url(/assets/images/askexp.png);
+  background-size:cover;
+  height:50px;
+  width:50px;
+  margin-left: -5px;
+
+}
+
+.menu_icons31
+{
+  
+  width:100%;
+  text-align:center;
+  height:100%;
+  margin-left: 11px;
+  background-image:url(/assets/images/advice.jpg);
+  background-size:cover;
+  height:50px;
+  width:50px;
+}
+
+.menu_button_label31
+{
+  position:absolute;
+  margin-top:1px;
+  margin-left:-1px;
+  color:#3C3C3C;
+  
+}
+
+
+/*third*/
+.menu_icons13
+{
+  width:100%;
+  text-align:center;
+  height:100%;
+  background-image:url(/assets/images/chat.png);
+  background-size:cover;
+  height:50px;
+  width:50px;
+  margin-left: -10px;
+}
+
+
+.menu_button_label3
+{
+  position:absolute;
+  margin-top:1px;
+  margin-left:-15px;
+  color:#3C3C3C;
+  
+}
+
+.menu_button_label22
+{
+  position:absolute;
+  margin-top:1px;
+  margin-left:-20px;
+  color:#3C3C3C;
+  
+}
+.menu_icons22
+{
+  
+  width:100%;
+  text-align:center;
+  height:100%;
+  background-image:url(/assets/images/askexp.png);
+  background-size:cover;
+  height:50px;
+  width:50px;
+  margin-left: -5px;
+
+}
+
+.menu_icons32
+{
+  
+  width:100%;
+  text-align:center;
+  height:100%;
+  margin-left: 11px;
+  background-image:url(/assets/images/advice.jpg);
+  background-size:cover;
+  height:50px;
+  width:50px;
+}
+
+.menu_button_label32
+{
+  position:absolute;
+  margin-top:1px;
+  margin-left:-1px;
+  color:#3C3C3C;
+  
+}
+
+
+.item{
+  height: -webkit-fill-available;
+  width: 100%;
+}

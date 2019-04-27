@@ -1,0 +1,58 @@
+<div style="text-align: center; font-family:times new roman, Helvetica, sans-serif; font-size: 20px;">
+<div>
+	<h1 class=" col-md-12" style="color: white;background-color:white ;color: black; text-align: center;height: 10%;width: 100%">Track Your Health </h1>
+	<h5  style="color:black;text-align: center; font-size: 20px"><b>You can track and follow what has happened in past.</b></h5>
+	<h5  style="color:black;text-align: center;font-size: 20px"><b>Medical report, digital prescription, lab finding, references to our network entities in past.</b></h5>
+
+</div>
+<div class="container col-md-3 col-lg-3 col-sm-3 well nav nav-pills nav-stacked" style="background-color:white;margin-top:  height: 71%" >
+	<nav>
+      	<ul class="mcd-menu">
+      		<li>
+        		<a [routerLink]="['mtr0']">
+          			<i class="fa fa-hospital-o" ></i>
+          			<strong class="m1">Medical History</strong>
+        		</a>
+      		</li>
+      		<li>
+        		<a [routerLink]=" ['mtr1']" >
+          			<i class="fa fa-medkit"></i>
+          			<strong class="m1">diagnostic Reports</strong>
+        		</a>
+      		</li>
+      		<li>
+        		<a [routerLink]="['mtr4']">
+          			<i class="fa fa-user-md"></i>
+          			<strong class="m1">Medicine Reports</strong>
+        		</a>
+       		</li>
+      <!-- <li>
+        <a [routerLink]="['Table3']">
+          <i class="fa fa-plus-square"></i>
+          <strong class="m1">My Sub Patients</strong>
+        </a>
+      </li>
+      <li>
+        <a href="">
+          <i class="fa fa-wheelchair"></i>
+          <strong class="">Help</strong>
+        </a>
+      </li> -->
+      
+    	</ul>
+  	</nav>
+</div>
+<div class="container-fluid col-md-9 col-xs-12 col-lg-9 col-sm-9  " style="background-color: white;height: 71%;">
+
+	<div class="container-fluid col-md-9 col-xs-12 col-lg-9 col-sm-12 well " style="background-color: white;width: 100%;">
+<!-- <h3 class="" style="color:#47b2d8;text-align: center; ">Your Medical Records</h3>
+ -->
+		<div>
+        	<router-outlet></router-outlet>
+
+		</div>
+
+
+	</div>
+</div>
+</div>

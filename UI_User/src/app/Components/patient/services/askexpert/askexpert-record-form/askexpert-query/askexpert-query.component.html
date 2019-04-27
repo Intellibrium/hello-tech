@@ -1,0 +1,18 @@
+<div style=" font-family:times new roman, Helvetica, sans-serif; font-size: 20px; text-align: center;">
+<h2 >
+   Post your query to ask expert:</h2>
+
+  <form [formGroup]="aeSubForm" (ngSubmit)="aePostQuery()" >
+<div class="col-md-12" style=" margin-top: 7%">
+      <div >
+       Query: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" formControlName="subject">
+      </div>
+      <br/>
+     Description:  <textarea type="text" formControlName="des"></textarea>
+      <div>
+        <button type="submit" class="btn btn-primary btn-info" >ASK</button>
+      </div>
+    </div>
+  </form>
+
+</div>

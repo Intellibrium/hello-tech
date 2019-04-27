@@ -1,0 +1,134 @@
+<body>
+  <div class="container">
+    <div class="row main">
+      <div class="panel-heading">
+          
+            </div> 
+      <div class="main-login main-center">
+        
+          <div> <h2 class="cust-label w1Center">Registration</h2>
+            </div>
+            <form [formGroup]="businessForm"  (ngSubmit)="Rigister()">
+            <div class="form-group" >
+                <label for="Select" class="col-md-2 col-md-offset-1 control-label cust-label w1Center" >Select </label>
+                 <div class="col-md-6">
+              <select class="form-control" formControlName="select" >
+                  
+                      <option>Pharmacy</option>
+                      <option>Laboratory</option>
+                      <option>Emergency Service</option>
+                  
+              
+                <control-messages [control]="businessForm.controls.select"></control-messages>
+              </select>
+            </div>
+            </div>
+          
+            <div class="form-group">
+             
+            <label for="name" class="cols-sm-2 control-label">Name of entity</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" formControlname="entityname" id="entity"  placeholder="Enter Entity Name"/>
+                <control-messages [control]="businessForm.controls.entityname"></control-messages>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="propritor" class="cols-sm-2 control-label">Your Propritor/Director Name</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" formControlname="propritor" id="propritor"  placeholder="Enter your Propritor/Director Name"/>
+                <control-messages [control]="businessForm.controls.propritor"></control-messages>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="ContactNo" class="cols-sm-2 control-label">Contact</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" formControlname="contact" id="contact"  placeholder="Enter your Contact Number"/>
+                <control-messages [control]="businessForm.controls.contact"></control-messages>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="cols-sm-2 control-label">Email_id</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                <input type="text" class="form-control" formControlname="email" id="email"  placeholder="Enter your Email_id"/>
+                <control-messages [control]="businessForm.controls.email"></control-messages>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="ContactPerson" class="cols-sm-2 control-label">Contact Person</label>
+            <div class="cols-sm-10">
+              <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+               
+                <input type="text" class="form-control" formControlname="contactperson" id="contactperson"  placeholder="Contact person"/>
+             
+                <control-messages [control]="businessForm.controls.contactperson"></control-messages>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+              <label for="ContactNo" class="cols-sm-2 control-label">Contact Person Number</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" formControlname="contactpersonnum" id="contactpersonnum"  placeholder="Enter Contact Number"/>
+                  <control-messages [control]="businessForm.controls.contactpersonnum"></control-messages>
+               
+                </div>
+              </div>
+            </div>
+  
+            <div class="form-group">
+              <label for="email" class="cols-sm-2 control-label">Email_id of Contact Person</label>
+              <div class="cols-sm-10">
+                <div class="input-group">
+                  <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" formControlname="cpemail" id="cpemail"  placeholder="Enter  Email_id"/>
+                  <control-messages [control]="businessForm.controls.cpemail"></control-messages>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+                <label for="GSTIN" class="cols-sm-2 control-label">GSTIN</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" formControlname="gstin" id="gstin"  placeholder="Enter your GST Number"/>
+                    <control-messages [control]="businessForm.controls.gstin"></control-messages>
+                  </div>
+                </div>
+              </div>
+    
+              <div class="form-group">
+                <label for="location" class="cols-sm-2 control-label">Location</label>
+                <div class="cols-sm-10">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                    <input type="text" class="form-control" formControlname="location" id="location"  placeholder="Enter your Location"/>
+                    <control-messages [control]="businessForm.controls.location"></control-messages>
+                  </div>
+                  </div>
+                  </div>
+                  <div class="form-group ">
+            <button type="submit" class="btn btn-primary btn-lg btn-block login-button" [disabled]="!businessForm.valid" >Register</button>
+          </div>
+        
+        </form>
+      </div>
+    </div>
+  </div>

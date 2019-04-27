@@ -1,0 +1,27 @@
+<div class="form-group">
+    <hr /> 
+    <div> </div>
+<form [formGroup]="docDetails" (ngSubmit)="giveDetails(docDetails.value)">
+                       DoctorName: <input type="text" class="form-control" formControlName="docName" style="width: 20%; margin-left: 40%;">
+                       <div *ngIf="docDetails.controls['docName'].hasError(touched)" class="alert alert-warning">
+
+                        error
+                       </div>
+                       Place: <input type="text" class="form-control" formControlName="docPlace" style="width: 20%; margin-left: 40%;">
+                       Time: <input type="date" class="form-control" formControlName="dateOfConsultation" style="width: 20%; margin-left: 40%;">
+                       <div *ngIf="docDetails.controls['dateOfConsultation'].hasError('required') && docDetails.controls['dateOfConsultation'].hasError('touched')" class="alert alert-warning">
+
+                        error
+                       </div>
+                       <br/>
+                        <label for="name">Upload Prescription :</label>
+            <div ng-app="fileUpload" class="container">
+                <div class="">
+                    <input type="file" fileinput="file" formControlName="prescription" filepreview="filepreview" style="width: 40%; margin-left: 40%;" />
+                </div>
+                <div class="col-md-6">
+                </div>
+            </div>
+                        <button type="submit" class="btn btn-primary btn-info">Next</button>                   
+                    </form>
+</div>

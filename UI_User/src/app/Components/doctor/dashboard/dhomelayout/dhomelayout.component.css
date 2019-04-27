@@ -1,0 +1,65 @@
+	#allservices{
+		margin-top: 150px;
+		cursor: pointer;
+		/*margin-right: 190px;*/
+	}
+
+	#allservices a{
+		color: #47b2d8;
+		text-decoration-line: none;
+	}
+	#allservices,a,img,span{
+		
+		text-align: center;
+	}
+
+	#allservices .text{
+		display: inline-block;
+		width: 120px;
+		height: 100px;
+		position: relative;
+		font-size: 12px;
+		/*box-shadow: 0px 0px 1px 1px #888888;*/
+		-webkit-transition:all .5s ease-in;
+		-webkit-transform:scale(1);
+		-ms-transition:all .5s ease-in;
+		-ms-transform:scale(1);
+		-moz-transition:all .5s ease-in;
+		-moz-transition:scale(1);
+		transition: all .5s ease-in;
+		transform: scale(1);
+	}
+
+	#allservices .text:hover{
+		cursor: pointer;
+		z-index: 1;
+		box-shadow: 0px 1px 5px #000000;
+		-webkit-transition:all .5s ease-out;
+		-webkit-transform:scale(1.2);
+		-ms-transition:all .5s ease-out;
+		-ms-transform:scale(1.2);
+		-moz-transition:all .5s ease-out;
+		-moz-transform:scale(1.2);
+		transition: all .5s ease-out;
+		transform:scale(1.2);
+	}
+
+	#allservices .col-md-3{
+		margin-bottom: 50px;
+		position: relative;
+	}
+
+	@media(max-width:500px){
+		/*#allservices{
+			margin-top: 150px;
+		}*/
+		#allservices .col-md-3{
+			width: 25%;
+
+		}
+		#allservices img a{
+			font-size: 6px;
+			width: 30px;
+			height: 30px;
+        }
+    }

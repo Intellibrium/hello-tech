@@ -1,0 +1,86 @@
+<!-- <div>
+    {{name}}
+    message from child to parent : {{res}}
+</div>
+<div>
+    msg: <input type="text" [(ngModel)]="msg">
+</div> -->
+<!-- <div *ngFor="let c of r">
+    {{c}}
+</div> -->
+<p style="margin-left: 254px; margin-top: 2px; color: #779ec5; font-family:times new roman, Helvetica, sans-serif; font-size: 30px; ">Patient Profile</p>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="">
+    <div class="col-md-12" >
+        <div class="row">
+            <div class="col-md-6" >
+            <div class="mobile-frame" style="margin-top: -35px; margin-left: 150px;  ">
+  <div class="wrap ">
+    <div class="form_inner_wrap" >
+        <div class="header">
+               <a href="Menu-section1.html">
+                    <div class="">
+                       <img  src="assets/images/logo.jpg" style="
+  
+  height:10%;
+  border-bottom:solid 2px #fff;
+ margin-left: 93px;
+  background-size:contain;
+  background-repeat:no-repeat;
+  background-position:center;
+ 
+  float:left;
+  height: 50px;" />
+                    </div>
+                </a>
+                
+            </div>
+ 
+    <div class="">
+       <img src="assets/images/medical.png" class="avatar img-circle img-thumbnail" alt="avatar" style="height: 20%;width: 30%; margin-left: 110px;">
+       <p style="margin-left: 100px; color: #779ec5; font-family:times new roman, Helvetica, sans-serif; font-size: 19px; "> Dr.Chandni Hasan </p></div>
+
+<div style="margin-left: 30px;" *ngFor="let m of patientMessages; let i=index;"  >
+Pavan Kumar: {{sendingPatient[i]}}  <br />
+   <a style="color:aquamarine;  background-color:green;"> <p style="color: blue;"> Dr. Chandni Hasan :  {{m}} </p></a>
+  
+   
+
+</div>
+
+
+<div class="stuck" style="width: 320px;">
+    {{sendingPatient[count]}}
+    <form [formGroup]="msgForm">
+     <input type="text"formControlName="m" placeholder="Type a message" [(ngModel)]="sendingPatient[count]">
+    
+    <!-- <button type="submit" (click)="sm()">send</button> -->
+   
+<i class="fa fa-send-o" (click)="sm()" style="font-size:19px; color:blue; "></i>
+    </form>
+</div>
+
+
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+
+<!-- child -->
+<!-- <div>
+    <testc [msgFromP]="msg" 
+    (msgFromC)="receiveFromChild($event)"></testc>
+</div> -->
+
+<!-- new -->
+<div>
+    <testc [mfp]="newm" [mc]="mp"
+    (r2)="rfc($event)"></testc>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
