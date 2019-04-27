@@ -1,0 +1,18 @@
+.body{margin-top:50px;}
+.row{
+    margin-right: -15px;
+    margin-left: -84px;
+    margin-top: 54px;
+}
+.glyphicon { margin-right:10px; }
+.panel-body { padding:0px; }
+.panel-body table tr td { padding-left: 15px }
+.panel-body .table {margin-bottom: 0px; }
+.panel-default {
+    border-color: #286090;
+}
+.panel-default>.panel-heading {
+    color: #333;
+   
+    
+    background-color: #d8eaf9;}
