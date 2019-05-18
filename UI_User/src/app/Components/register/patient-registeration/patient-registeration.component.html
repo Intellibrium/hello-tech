@@ -10,7 +10,7 @@
                             <h2 class="cust-label w1Center">Registration</h2>
                             <hr/>
 
-                            <form [formGroup]="userForm" (submit)="saveUser()">
+                            <form [formGroup]="userForm">
 
                                 <div class="form-group">
                                     <label for="name" class="col-md-2 col-md-offset-1 control-label cust-label w1Center">First Name</label>
@@ -90,15 +90,11 @@
                                             <option>O-</option>
                                             <control-messages [control]="userForm.controls.lood"></control-messages>
                                         </select>
-
-
-
                                     </div>
                                 </div>
 
 
-                                <button type="submit" class="btn btn-primary col-md-offset-5 col-lg-offset-5 col-xs-offset-5 col-sm-offset-5" data-toggle="modal"
-                                    data-target="#basicModal" [disabled]="!userForm.valid">Submit</button>
+                                <button type="button" class="btn btn-primary col-md-offset-5 col-lg-offset-5 col-xs-offset-5 col-sm-offset-5" (click)="saveUser()" [disabled]="!userForm.valid">Submit</button>
                             </form>
 
 
@@ -126,7 +122,7 @@
 
                                                     <button type="button" class="btn btn-primary " aria-hidden="true" (click)="send()">Resend O.T.P</button>
 
-                                                    <p style="color: {{col}}"> Status: {{sent}} </p>
+                                                    <!-- <p style="color: {{ col}}"> Status: {{sent}} </p> -->
                                                     <span>{{reenter}}</span>
                                                 </div>
                                             </div>

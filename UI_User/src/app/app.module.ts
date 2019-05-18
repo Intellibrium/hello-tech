@@ -147,6 +147,7 @@ import { DocchatComponent } from './DoctorWorkBenchComponents/docchat/docchat.co
 import { PatientsymptomComponent } from './DoctorWorkBenchComponents/patientsymptom/patientsymptom.component';
 import { QueuehistoryComponent } from './DoctorWorkBenchComponents/queuehistory/queuehistory.component';
 import { PatientuploadsComponent } from './DoctorWorkBenchComponents/patientuploads/patientuploads.component';
+import { UserRestrationService } from './Components/register/patient-registeration/user-restration.service';
 //
 //
 const appRoutes: Routes=[
@@ -325,7 +326,7 @@ children:[
     HttpModule,FormsModule,ReactiveFormsModule,HttpClientModule,
     RouterModule.forRoot(appRoutes, {enableTracing: false})
   ],
-  providers: [],
+  providers: [UserRestrationService],
   bootstrap: [AppComponent]
 })
 
